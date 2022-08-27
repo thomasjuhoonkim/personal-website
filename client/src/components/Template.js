@@ -1,12 +1,12 @@
-import React, { getContext } from "react";
+import React, { useContext } from "react";
 import { DarkModeContext } from "../context/DarkModeContext";
 
-import styles from "./Template.module.css";
+import "./Template.scoped.css";
 
 const Template = (props) => {
-  const { theme } = getContext(DarkModeContext);
+  const { theme } = useContext(DarkModeContext);
   return (
-    <div className={styles.app} data-theme={theme}>
+    <div className="app" data-theme={theme}>
       {props.children}
     </div>
   );

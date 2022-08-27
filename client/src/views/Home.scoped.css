@@ -1,0 +1,18 @@
+.home-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h1, h2 {
+  color: var(--font-color)
+}
+
+.me {
+  mask-image: url(../assets/blob.svg);
+  mask-size: 110%;
+  mask-position: center -2rem;
+  mask-repeat: no-repeat;
+}

@@ -1,10 +1,10 @@
-.navBar {
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.navLogo {
+.nav-logo {
   width: 90px;
   height: 90px;
   display: flex;
@@ -13,37 +13,37 @@
   cursor: pointer;
 }
 
-.navLogo img{
+.nav-logo img{
   transform: translate(1px, 0) scale(0.225);
 }
 
-.navLogo img:hover {
+.nav-logo img:hover {
   filter: drop-shadow(0 0 10px var(--shadow-color));
   transition: filter 0.3s ease;
 }
 
-.navLogo img[data-theme="dark"] {
+.nav-logo img[data-theme="dark"] {
   filter: invert(100%);
 }
 
-.navLinks {
+.nav-links {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.navLink {
+.nav-link {
   padding: 0 1rem;
   list-style: none;
 }
 
-.navLink a {
+.nav-link a {
   text-decoration: none;
   color: var(--font-color);
   position: relative
 }
 
-.navLink a::after {
+.nav-link a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -55,11 +55,11 @@
   transition: opacity .3s, transform .3s;
 }
 
-.navLink a:hover {
+.nav-link a:hover {
   text-shadow: 0 0 0.5px var(--shadow-color);
 }
 
-.navLink a:hover::after {
+.nav-link a:hover::after {
   opacity: 1;
   transform: translateY(0.5em);
 }
