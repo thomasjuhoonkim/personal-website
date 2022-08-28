@@ -4,6 +4,14 @@
 
 h1 {
   font-size: 60px;
+  font-weight: 700;
+  line-height: 106px;
+}
+
+h2 {
+  margin-top: -35px;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 h1, h2 {
@@ -11,7 +19,7 @@ h1, h2 {
 }
 
 .me {
-  mask-image: url(../assets/blob.svg);
+  /* mask-image: url(../assets/blob.svg); */
   mask-size: 110%;
   mask-position: center -2rem;
   mask-repeat: no-repeat;

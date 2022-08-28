@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { DarkModeContext } from "../context/DarkModeContext";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,
@@ -12,8 +11,6 @@ import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.scoped.css";
 
 const Footer = () => {
-  const { theme } = useContext(DarkModeContext);
-
   return (
     <div className="footer-container">
       <p className="credits">Made with React and Sleepless Nights</p>

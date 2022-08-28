@@ -8,7 +8,6 @@ function DarkModeProvider(props) {
   );
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    console.log(newTheme);
     setTheme(newTheme);
   };
 
