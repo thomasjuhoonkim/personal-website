@@ -19,7 +19,7 @@ const NavBar = () => {
           <a href="/experiences">experiences</a>
         </li>
         <li className="nav-link">
-          <a href="mailto:thomasjuhoonkim@gmail.com">contact</a>
+          <a href="/contact">contact</a>
         </li>
       </ul>
     </nav>

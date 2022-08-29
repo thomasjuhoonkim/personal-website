@@ -1,0 +1,16 @@
+.about-container {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text-container {
+
+  }
+  img {
+    width: 30vw;
+    margin-left: 70px;
+  }
+  h1, p {
+    color: var(--font-color);
+  }
+}

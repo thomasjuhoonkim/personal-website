@@ -32,6 +32,7 @@ li {
   }
   a:hover {
     text-shadow: 0 0 0.5px var(--shadow-color);
+    transition: text-shadow .5s ease;
     &::after {
       opacity: 1;
       transform: translateY(0.5em);
