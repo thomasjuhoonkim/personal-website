@@ -39,6 +39,12 @@
   .about-container {
     margin-top: 1rem;
     flex-direction: column;
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 11px;
+    }
     img {
       margin-top: 3rem;
       margin-left: 0;
