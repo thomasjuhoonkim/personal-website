@@ -3,14 +3,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .text-container {
-
+  h1 {
+    font-size: 45px;
+    line-height: 60px;
   }
-  img {
-    width: 30vw;
-    margin-left: 70px;
+  p {
+    font-size: 14px;
   }
   h1, p {
     color: var(--font-color);
+  }
+  img {
+    width: 30vw;
+    margin-left: 60px;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .grobo-link {
+    color: #a3cf5f;
+  }
+  .enpowered-link {
+    color: #f6cb2a;
+  }
+  .fourstar-link {
+    color: #ec3e3d;
+  }
+  .portfolio-link {
+    color: var(--secondary-color);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .about-container {
+    margin-top: 1rem;
+    flex-direction: column;
+    img {
+      margin-top: 3rem;
+      margin-left: 0;
+      width: 70vw;
+    }
   }
 }

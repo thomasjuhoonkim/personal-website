@@ -34,7 +34,7 @@
         background: #fce570;
         width: 27.5px;
         height: 27.5px;
-        border-radius: 2px;
+        border-radius: 1px;
         &:before,
         &:after {
           position: absolute;
@@ -42,7 +42,7 @@
           height: 27.5px;
           width: 27.5px;
           background: #fce570;
-          border-radius: 2px;
+          border-radius: 1px;
         }
         &:before {
           transform: rotate(30deg);

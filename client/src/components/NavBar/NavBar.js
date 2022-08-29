@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import DarkModeButton from "../DarkModeButton/DarkModeButton";
+import DarkModeButton from "./DarkModeButton/DarkModeButton";
 
 import "./NavBar.scoped.scss";
 
@@ -10,16 +11,19 @@ const NavBar = () => {
       <DarkModeButton />
       <ul className="nav-links">
         <li className="nav-link">
-          <a href="/">home</a>
+          <Link to="/">home</Link>
         </li>
         <li className="nav-link">
-          <a href="/about">about</a>
+          <Link to="/about">about</Link>
         </li>
         <li className="nav-link">
-          <a href="/experiences">experiences</a>
+          <Link to="/experiences">experiences</Link>
         </li>
         <li className="nav-link">
-          <a href="/contact">contact</a>
+          <Link to="/portfolio">portfolio</Link>
+        </li>
+        <li className="nav-link">
+          <Link to="/contact">contact</Link>
         </li>
       </ul>
     </nav>

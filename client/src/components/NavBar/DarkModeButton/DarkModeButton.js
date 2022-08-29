@@ -1,14 +1,19 @@
 import React, { useContext } from "react";
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../../assets/logo.svg";
 import "./DarkModeButton.scoped.scss";
 
 const DarkModeButton = () => {
   const { theme, switchTheme } = useContext(DarkModeContext);
 
   return (
-    <div className="nav-logo" onClick={switchTheme} data-theme={theme}>
+    <div
+      className="nav-logo"
+      onClick={switchTheme}
+      data-theme={theme}
+      title="Click me!"
+    >
       <img src={logo} alt="Ghost looking logo" />
       <div className="sky">
         <div className="sun">
