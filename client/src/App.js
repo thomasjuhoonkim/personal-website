@@ -15,15 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
+        <Route index path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-      </Routes>
-      <Routes>
         <Route path="/experiences" element={<Experiences />} />
-      </Routes>
-      <Routes>
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>

@@ -10,21 +10,21 @@ const DarkModeButton = () => {
   return (
     <div className="nav-logo" onClick={switchTheme} data-theme={theme}>
       <img src={logo} alt="Ghost looking logo" />
-      <div class="sky">
-        <div class="sun">
-          <div class="outer" />
-          <div class="inner" />
+      <div className="sky">
+        <div className="sun">
+          <div className="outer" />
+          <div className="inner" />
         </div>
-        <div class="moon" />
-        <div class="cloud cloud1">
-          <div class="rect" />
-          <div class="circle circle-lg" />
-          <div class="circle circle-sm" />
+        <div className="moon" />
+        <div className="cloud cloud1">
+          <div className="rect" />
+          <div className="circle circle-lg" />
+          <div className="circle circle-sm" />
         </div>
-        <div class="cloud cloud2">
-          <div class="rect" />
-          <div class="circle circle-lg" />
-          <div class="circle circle-sm" />
+        <div className="cloud cloud2">
+          <div className="rect" />
+          <div className="circle circle-lg" />
+          <div className="circle circle-sm" />
         </div>
       </div>
     </div>
