@@ -6,6 +6,7 @@
   justify-content: center;
   p {
     color: var(--font-color);
+    transition: color .5s ease;
   }
   .social-media-container {
     display: flex;
@@ -15,17 +16,18 @@
       width: 30px;
       height: 30px;
       border-radius: 100%;
-      background-color: var(--font-color);
+      background: var(--font-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform .1s ease;
+      transition: transform .1s ease, background .5s ease;
       cursor: pointer;
       &:hover {
         transform: scale(1.2);
       }
       .icon {
         color: var(--bg-color);
+        transition: color .5s ease;
       }
     }
   }

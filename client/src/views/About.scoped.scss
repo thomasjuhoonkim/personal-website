@@ -3,15 +3,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--font-color);
+  transition: color .5s ease;
   h1 {
     font-size: 45px;
-    line-height: 60px;
+    line-height: 45px;
   }
   p {
     font-size: 14px;
-  }
-  h1, p {
-    color: var(--font-color);
   }
   img {
     width: 30vw;

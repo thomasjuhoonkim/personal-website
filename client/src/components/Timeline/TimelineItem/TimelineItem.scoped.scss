@@ -1,0 +1,51 @@
+.timeline-item {
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color .5s ease;
+  .icon-container {
+    z-index: 1;
+    margin-right: 2.25rem;
+    background: var(--font-color);
+    padding: 15px;
+    border-radius: 100%;
+    transition: background .5s ease, transform .1s ease;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      color: var(--bg-color);
+      transition: color .5s ease;
+    }
+    &:hover {
+      transform: scale(1.15);
+      cursor: pointer;
+    }
+  }
+  .card {
+    h2 {
+      font-size: 20px;
+      line-height: 0.25rem;
+    }
+    h3 {
+      font-size: 15px;
+      line-height: 0.25rem;
+      margin-top: 18px;
+    }
+    li {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: -25px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1rem;
+      margin-top: -7.5px;
+      font-weight: 400;
+    }
+  }
+}
