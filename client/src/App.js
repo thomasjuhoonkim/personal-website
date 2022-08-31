@@ -7,7 +7,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Experiences from "./views/Experiences";
 import Portfolio from "./views/Portfolio";
-import Contact from "./views/Experiences";
+import Contact from "./views/Contact";
 
 import "./App.css";
 

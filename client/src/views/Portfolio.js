@@ -1,9 +1,11 @@
 import React from "react";
 
+import PortfolioShowcase from "../components/PortfolioShowcase/PortfolioShowcase";
+
 import "./Portfolio.scoped.scss";
 
 const Portfolio = () => {
-  return <p>portfolio</p>;
+  return <PortfolioShowcase />;
 };
 
 export default Portfolio;

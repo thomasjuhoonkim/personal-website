@@ -166,22 +166,23 @@ svg {
 
 @keyframes moveSunIn {
   0% {
-    transform: translateY(40px) translateX(-30px) scale(0);
+    // transform: translateY(40px) translateX(-30px) scale(0);
+    transform: translateY(40px) translateX(-30px) rotate(-90deg) scale(0);
   }
 }
 @keyframes moveSunOut {
   100% {
-    transform: translateY(40px) translateX(60px) scale(0);
+    transform: translateY(40px) translateX(60px) rotate(90deg) scale(0);
   }
 }
 @keyframes moveMoonIn {
   0% {
-    transform: translateY(60px) translateX(-60px) scale(0);
+    transform: rotate(-10deg) translateY(60px) translateX(-60px) scale(0);
   }
 }
 @keyframes moveMoonOut {
   100% {
-    transform: translateY(60px) translateX(60px) scale(0);
+    transform: rotate(10deg) translateY(60px) translateX(60px) scale(0);
   }
 }
 @keyframes rotateSun {
