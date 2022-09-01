@@ -1,8 +1,8 @@
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(80, 7vw);
-  grid-gap: 8px;
+  grid-template-rows: repeat(203, 5vw);
+  grid-gap: 0.4vw;
   position: relative;
   .grid-item {
     margin: 0;
@@ -14,20 +14,19 @@
   }
 }
 
-// .grid-item--1 {
-//   grid-area: 1 / 1 / 5 / 5;
-//   position: relative;
-//   &::before {
-//     display: block;
-//     content: "hello";
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-family: "Fraunces", 'Times New Roman', Times, serif;
-//     color: var(--white);
-//   }
-// }
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+  .photo-grid {
+    grid-gap: 0.75vw;
+    grid-template-rows: repeat(203, 7.5vw);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .photo-grid {
+    grid-gap: 1.125vw;
+    grid-template-rows: repeat(203, 10vw);
+  }
+}
 
 // Warm => Cold => Black => New York => Cityscape
 // 61-76=> 15-24=> 0-5   => 46-60    => 6-14
@@ -47,6 +46,7 @@
     font-family: "Fraunces", 'Times New Roman', Times, serif;
     color: var(--white);
     font-size: 7.5vw;
+    cursor: default;
   }
 }
 .grid-item--62 {
@@ -95,9 +95,239 @@
   grid-area: 22 / 4 / 25 / 7;
 }
 
-// =========================================================================COLD
+// ======================================================================STRIPES
+.grid-item--32 {
+  grid-area: 25 / 1 / 30 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Stripes";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
+}
+.grid-item--33 {
+  grid-area: 30 / 1 / 32 / 4;
+}
+.grid-item--34 {
+  grid-area: 30 / 4 / 32 / 7;
+}
+.grid-item--35 {
+  grid-area: 32 / 1 / 34 / 4;
+}
+.grid-item--36 {
+  grid-area: 32 / 4 / 34 / 7;
+}
+.grid-item--37 {
+  grid-area: 34 / 1 / 36 / 4;
+}
+.grid-item--38 {
+  grid-area: 34 / 4 / 36 / 7;
+}
+
+// ====================================================================NOSTOLGIA
+.grid-item--45 {
+  grid-area: 36 / 1 / 42 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Nostalgia";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
+}
+.grid-item--39 {
+  grid-area: 42 / 1 / 47 / 3;
+}
+.grid-item--42 {
+  grid-area: 42 / 3 / 47 / 5;
+}
+.grid-item--44 {
+  grid-area: 42 / 5 / 47 / 7;
+}
+.grid-item--40 {
+  grid-area: 47 / 1 / 52 / 7;
+}
+.grid-item--41 {
+  grid-area: 52 / 1 / 59 / 4;
+}
+.grid-item--43 {
+  grid-area: 52 / 4 / 59 / 7;
+}
+
+// ======================================================================TORONTO
+.grid-item--8 {
+  grid-area: 59 / 1 / 64 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Toronto";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
+}
+.grid-item--9 {
+  grid-area: 64 / 1 / 68 / 3;
+}
+.grid-item--10 {
+  grid-area: 64 / 3 / 68 / 5;
+}
+.grid-item--14 {
+  grid-area: 64 / 5 / 68 / 7;
+}
+.grid-item--12 {
+  grid-area: 68 / 1 / 74 / 4;
+}
+.grid-item--13 {
+  grid-area: 68 / 4 / 74 / 7;
+}
+.grid-item--7 {
+  grid-area: 74 / 1 / 78 / 3;
+}
+.grid-item--6 {
+  grid-area: 74 / 3 / 78 / 5;
+}
+.grid-item--11 {
+  grid-area: 74 / 5 / 78 / 7;
+}
+
+// ==========================================================================NYC
+.grid-item--46 {
+  grid-area: 78 / 1 / 90 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "NYC";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
+}
+.grid-item--47 {
+  grid-area: 90 / 1 / 96 / 4;
+}
+.grid-item--48 {
+  grid-area: 93 / 4 / 99 / 7;
+}
+.grid-item--54 {
+  grid-area: 90 / 4 / 93 / 7;
+}
+.grid-item--60 {
+  grid-area: 96 / 1 / 99 / 4;
+}
+.grid-item--55 {
+  grid-area: 99 / 1 / 105 / 4;
+}
+.grid-item--56 {
+  grid-area: 99 / 4 / 105 / 7;
+}
+.grid-item--51 {
+  grid-area: 105 / 1 / 109 / 3;
+}
+.grid-item--52 {
+  grid-area: 105 / 3 / 109 / 5;
+}
+.grid-item--53 {
+  grid-area: 105 / 5 / 109 / 7;
+}
+.grid-item--57 {
+  grid-area: 109 / 1 / 115 / 4;
+}
+.grid-item--58 {
+  grid-area: 109 / 4 / 115 / 7;
+}
+.grid-item--49 {
+  grid-area: 115 / 1 / 121 / 4;
+}
+.grid-item--50 {
+  grid-area: 115 / 4 / 121 / 7;
+}
+
+// ========================================================================BLACK
+.grid-item--5 {
+  grid-area: 121 / 1 / 133 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Black";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
+}
+.grid-item--0 {
+  grid-area: 133 / 1 / 139 / 4;
+}
+.grid-item--4 {
+  grid-area: 133 / 4 / 139 / 7;
+}
+.grid-item--1 {
+  grid-area: 139 / 1 / 143 / 3;
+}
+.grid-item--2 {
+  grid-area: 139 / 3 / 143 / 5;
+}
+.grid-item--3 {
+  grid-area: 139 / 5 / 143 / 7;
+}
+
+// ========================================================================PURGE
+.grid-item--19 {
+  grid-area: 143 / 1 / 155 / 7;
+  &::before {
+    grid-area: 143 / 1 / 155 / 7;
+    content: "PURGE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    font-weight: lighter;
+    cursor: default;
+  }
+}
+.grid-item--18 {
+  grid-area: 155 / 1 / 161 / 4;
+  transform: scaleX(-1);
+}
+.grid-item--20 {
+  grid-area: 155 / 4 / 161 / 7;
+}
+
+// ====================================================================ADVENTURE
 .grid-item--26 {
-  grid-area: 25 / 1 / 29 / 7;
+  grid-area: 161 / 1 / 165 / 7;
   position: relative;
   &::before {
     display: block;
@@ -109,60 +339,61 @@
     font-family: "Fraunces", 'Times New Roman', Times, serif;
     color: var(--white);
     font-size: 7.5vw;
+    cursor: default;
   }
 }
-.grid-item--24 {
-  grid-area: 29 / 1 / 34 / 3;
+.grid-item--15 {
+  grid-area: 165 / 1 / 168 / 4;
 }
 .grid-item--16 {
-  grid-area: 29 / 3 / 34 / 5;
-}
-.grid-item--21 {
-  grid-area: 29 / 5 / 34 / 7;
-}
-.grid-item--15 {
-  grid-area: 34 / 1 / 36 / 3;
+  grid-area: 165 / 4 / 172 / 7;
 }
 .grid-item--17 {
-  grid-area: 34 / 3 / 36 / 5;
+  grid-area: 168 / 1 / 171 / 4;
 }
-.grid-item--23 {
-  grid-area: 34 / 5 / 36 / 7;
-}
-.grid-item--28 {
-  grid-area: 36 / 1 / 40 / 7;
-}
-.grid-item--30 {
-  grid-area: 40 / 1 / 47 / 7;
-}
-.grid-item--18 {
-  grid-area: 47 / 1 / 52 / 3;
-}
-.grid-item--19 {
-  grid-area: 47 / 3 / 52 / 5;
-}
-.grid-item--20 {
-  grid-area: 47 / 5 / 52 / 7;
-}
-.purge {
-  grid-area: 47 / 1 / 52 / 7;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--white);
-  font-size: 15.5vw;
-  font-weight: lighter;
-  opacity: 0.5;
-}
-.grid-item--29 {
-  visibility: hidden;
-}
-.grid-item--27 {
-  visibility: hidden;
+.grid-item--21 {
+  grid-area: 171 / 1 / 178 / 4;
 }
 .grid-item--22 {
-  visibility: hidden;
+  grid-area: 178 / 1 / 185 / 4;
+}
+.grid-item--23 {
+  grid-area: 172 / 4 / 175 / 7;
+}
+.grid-item--24 {
+  grid-area: 175 / 4 / 182 / 7;
+}
+.grid-item--27 {
+  grid-area: 182 / 4 / 185 / 7;
+}
+.grid-item--29 {
+  grid-area: 185 / 1 / 188 / 4;
+}
+.grid-item--31 {
+  grid-area: 185 / 4 / 188 / 7;
+}
+.grid-item--25 {
+  grid-area: 188 / 1 / 194 / 4;
+}
+.grid-item--59 {
+  grid-area: 188 / 4 / 194 / 7;
+}
+.grid-item--28 {
+  grid-area: 194 / 1 / 198 / 7;
+}
+.grid-item--30 {
+  grid-area: 198 / 1 / 204 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "The End";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+    cursor: default;
+  }
 }

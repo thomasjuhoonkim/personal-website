@@ -13,7 +13,7 @@ const PhotoGrid = () => {
           <img
             className="grid-image"
             src={images(`./${index}.jpg`)}
-            alt={`Gallery Item ${index + 1}`}
+            alt={`Gallery Item ${index}`}
           />
         </figure>
       );
@@ -21,12 +21,7 @@ const PhotoGrid = () => {
     return elements;
   };
 
-  return (
-    <div className="photo-grid">
-      {getImageElements(images)}
-      <h2 className="purge">PURGE</h2>
-    </div>
-  );
+  return <div className="photo-grid">{getImageElements(images)}</div>;
 };
 
 export default PhotoGrid;

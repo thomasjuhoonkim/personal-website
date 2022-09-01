@@ -1,33 +1,89 @@
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-
 @import url('https://fonts.googleapis.com/css?family=Fraunces:400,700');
 
 .portfolio-showcase-container {
+  margin: 0 15rem;
+  h1, h2, p {
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    text-align: center;
+    color: var(--font-color);
+    transition: color .5s ease;
+  }
   .title-image-container {
-    position: relative;
-    h1 {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .cat {
       width: 100%;
-      text-align: center;
-      font-family: "Fraunces", 'Times New Roman', Times, serif;
-      color: var(--white);
-      font-size: 5vw;
+    }
+    h1 {
+      font-size: 60px;
       font-weight: 400;
     }
-    img {
-      width: 100%;
+    h2 {
+      font-size: 30px;
+      font-weight: 400;
+      margin-top: -20px;
+    }
+  }
+  .text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7.5px;
+    p {
+      font-size: 20px;
+    }
+  }
+  hr {
+    display: none;
+    border: 1px solid var(--font-color);
+    border-radius: 1px;
+    transition: border .5s ease;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    border: none;
+    border-radius: 17.5px;
+    height: 35px;
+    width: 130px;
+    background: var(--font-color);
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: 12px;
+    transition: transform .1s ease, color .5s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+  .portfolio-showcase-container {
+    margin: 0 0rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .portfolio-showcase-container {
+    margin: 0 -2.5rem;
+    .title-image-container {
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        margin-top: -10px;
+        font-size: 20px;
+      }
+    }
+    .text-container {
+      p {
+        display: none;
+      }
+    }
+    hr {
+      display: block;
+      margin-bottom: 14px;
     }
   }
 }
