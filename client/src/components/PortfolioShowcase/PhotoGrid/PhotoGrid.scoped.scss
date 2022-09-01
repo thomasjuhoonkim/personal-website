@@ -1,0 +1,168 @@
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(80, 7vw);
+  grid-gap: 8px;
+  position: relative;
+  .grid-item {
+    margin: 0;
+    .grid-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// .grid-item--1 {
+//   grid-area: 1 / 1 / 5 / 5;
+//   position: relative;
+//   &::before {
+//     display: block;
+//     content: "hello";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     font-family: "Fraunces", 'Times New Roman', Times, serif;
+//     color: var(--white);
+//   }
+// }
+
+// Warm => Cold => Black => New York => Cityscape
+// 61-76=> 15-24=> 0-5   => 46-60    => 6-14
+// grid-area: row-start (1) / column-start (1) / row-end+1 / column-end+1 (7)
+
+// =======================================================================WARMTH
+.grid-item--61 {
+  grid-area: 1 / 1 / 7 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Warmth";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+  }
+}
+.grid-item--62 {
+  grid-area: 7 / 1 / 9 / 3;
+}
+.grid-item--63 {
+  grid-area: 7 / 3 / 12 / 5;
+}
+.grid-item--64 {
+  grid-area: 9 / 1 / 11 / 3;
+}
+.grid-item--65 {
+  grid-area: 7 / 5 / 9 / 7;
+}
+.grid-item--66 {
+  grid-area: 9 / 5 / 14 / 7;
+}
+.grid-item--67 {
+  grid-area: 11 / 1 / 16 / 3;
+}
+.grid-item--68 {
+  grid-area: 12 / 3 / 14 / 5;
+}
+.grid-item--69 {
+  grid-area: 14 / 3 / 18 / 7;
+}
+.grid-item--70 {
+  grid-area: 16 / 1 / 20 / 3;
+}
+.grid-item--71 {
+  grid-area: 18 / 3 / 22 / 5;
+}
+.grid-item--72 {
+  grid-area: 18 / 5 / 20 / 7;
+}
+.grid-item--73 {
+  grid-area: 20 / 5 / 22 / 7;
+}
+.grid-item--74 {
+  grid-area: 20 / 1 / 22 / 3;
+}
+.grid-item--75 {
+  grid-area: 22 / 1 / 25 / 4;
+}
+.grid-item--76 {
+  grid-area: 22 / 4 / 25 / 7;
+}
+
+// =========================================================================COLD
+.grid-item--26 {
+  grid-area: 25 / 1 / 29 / 7;
+  position: relative;
+  &::before {
+    display: block;
+    content: "Adventure";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Fraunces", 'Times New Roman', Times, serif;
+    color: var(--white);
+    font-size: 7.5vw;
+  }
+}
+.grid-item--24 {
+  grid-area: 29 / 1 / 34 / 3;
+}
+.grid-item--16 {
+  grid-area: 29 / 3 / 34 / 5;
+}
+.grid-item--21 {
+  grid-area: 29 / 5 / 34 / 7;
+}
+.grid-item--15 {
+  grid-area: 34 / 1 / 36 / 3;
+}
+.grid-item--17 {
+  grid-area: 34 / 3 / 36 / 5;
+}
+.grid-item--23 {
+  grid-area: 34 / 5 / 36 / 7;
+}
+.grid-item--28 {
+  grid-area: 36 / 1 / 40 / 7;
+}
+.grid-item--30 {
+  grid-area: 40 / 1 / 47 / 7;
+}
+.grid-item--18 {
+  grid-area: 47 / 1 / 52 / 3;
+}
+.grid-item--19 {
+  grid-area: 47 / 3 / 52 / 5;
+}
+.grid-item--20 {
+  grid-area: 47 / 5 / 52 / 7;
+}
+.purge {
+  grid-area: 47 / 1 / 52 / 7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  font-size: 15.5vw;
+  font-weight: lighter;
+  opacity: 0.5;
+}
+.grid-item--29 {
+  visibility: hidden;
+}
+.grid-item--27 {
+  visibility: hidden;
+}
+.grid-item--22 {
+  visibility: hidden;
+}
