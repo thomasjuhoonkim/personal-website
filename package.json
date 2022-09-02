@@ -1,0 +1,21 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "cd client && npm run build",
+    "deploy": "npm run build && git push heroku main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasjuhoonkim/personal-website.git"
+  },
+  "author": "Thomas Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasjuhoonkim/personal-website/issues"
+  },
+  "homepage": "https://github.com/thomasjuhoonkim/personal-website#readme"
+}
