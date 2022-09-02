@@ -10,6 +10,7 @@
     border-radius: 100%;
     border: 2px solid var(--font-color);
     padding: 15px;
+    transition: padding .1s ease, width .1s ease, border .5s ease;
     cursor: pointer;
     &:hover {
       padding: 0;
@@ -27,6 +28,7 @@
     transition: color .5s ease;
     &:hover {
       font-weight: bold;
+      transition: font-weight .1s ease;
     }
   }
 }

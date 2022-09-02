@@ -25,7 +25,7 @@ const ProjectShowcase = () => {
           title="Warepair"
           description="Warepair is a web app that bridges the gap between these two groups of people."
           skills="JavaScript, React.js, Python, Flask, PostgreSQL, Google Maps API"
-          link="https://github.com/thomasjuhoonkim/warepair"
+          link="https://warepair.herokuapp.com/"
         />
         <ProjectShowcaseItem
           img={images("./calculator.png")}

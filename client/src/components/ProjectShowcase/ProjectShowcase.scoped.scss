@@ -1,6 +1,7 @@
 .project-title {
   margin-top: 36px;
   color: var(--font-color);
+  transition: color .5s ease;
 }
 .project-showcase-container {
   display: flex;
