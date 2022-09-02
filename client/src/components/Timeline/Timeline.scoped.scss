@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   flex-direction: column;
 
   .vertical-line {
@@ -15,5 +15,16 @@
     height: 95%;
     border-radius: 2.5px;
     background: var(--font-color);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .timeline {
+    margin: -1rem 0;
+
+    .vertical-line {
+      top: 17.5px;
+      height: 97%;
+    }
   }
 }

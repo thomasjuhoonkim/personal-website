@@ -18,19 +18,12 @@ const PortfolioShowcase = () => {
       </div>
       <div className="text-container">
         <p>Warmth</p>
-        <p>-</p>
         <p>Stripes</p>
-        <p>-</p>
         <p>Nostolgia</p>
-        <p>-</p>
         <p>Toronto</p>
-        <p>-</p>
         <p>NYC</p>
-        <p>-</p>
         <p>Black</p>
-        <p>-</p>
         <p>PURGE</p>
-        <p>-</p>
         <p>Adventure</p>
       </div>
       <hr />

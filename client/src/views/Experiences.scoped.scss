@@ -2,6 +2,15 @@
   margin: 2.5rem 0;
   .experiences-title {
     color: var(--font-color);
+    font-size: 36px;
     transition: color .5s ease;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .experiences-container {
+    .experiences-title {
+      font-size: 26px;
+    }
   }
 }

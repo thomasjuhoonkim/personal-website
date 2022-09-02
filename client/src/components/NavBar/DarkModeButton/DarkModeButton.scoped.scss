@@ -200,3 +200,9 @@ svg {
     transform: translateX(-15px);
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .nav-logo {
+    margin-left: 1rem;
+  }
+}

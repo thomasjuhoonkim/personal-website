@@ -62,7 +62,11 @@ const About = () => {
         </p>
         <p>Thanks for stopping by!</p>
       </div>
-      <img src={pls} alt="Please get me out of here" />
+      <img
+        src={pls}
+        alt="Please get me out of here"
+        title="I look very uncomfortable by my sister"
+      />
     </div>
   );
 };
