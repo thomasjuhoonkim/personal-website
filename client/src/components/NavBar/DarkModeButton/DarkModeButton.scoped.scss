@@ -12,7 +12,7 @@
     transition: filter .5s ease;
   }
   img:hover {
-    filter: drop-shadow(0 0 2px var(--shadow-color));
+    filter: drop-shadow(0 0 2px var(--font-color));
   }
 
   // SKY
@@ -155,8 +155,7 @@
     animation: moveMoonIn .5s ease;
   }
   img {
-    filter:invert(100%);
-    transition: filter .5s ease;
+    filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg) brightness(117%) contrast(90%);
   }
 }
 

@@ -1,0 +1,43 @@
+.project-title {
+  margin-top: 36px;
+  color: var(--font-color);
+}
+.project-showcase-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+button {
+  display: none;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: -30px;
+  border: none;
+  border-radius: 17.5px;
+  height: 35px;
+  width: 130px;
+  background: var(--font-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 12px;
+  transition: transform .1s ease, color .5s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .project-title {
+    margin-top: 4rem;
+    font-size: 26px;
+  }
+  .project-showcase-container {
+    justify-content: center;
+    gap: 18px;
+  }
+  button {
+    display: block;
+  }
+}
