@@ -15,14 +15,14 @@ const options = {
 const app = express();
 const buildPath = path.join(__dirname, "../client/build");
 app.use(express.static(buildPath));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(buildPath, "index.html"));
-});
 app.use((req, res, next) => {
   if (req.protocol === "http") {
     res.redirect(301, `https://${req.headers.host}${req.url}`);
   }
   next();
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
 });
 
 const httpsPort = process.env.PORT || 443;
