@@ -1,16 +1,27 @@
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 3000;
+const fs = require("fs");
 const path = require("path");
+const https = require("https");
+const express = require("express");
 
-const publicPath = path.join(__dirname, "../client/build");
+const port = process.env.PORT || 3000;
+const hostname = "thomasjuhoonkim.me";
 
-app.use(express.static(publicPath));
+const buildPath = path.join(__dirname, "../client/build");
 
+const cert = fs.readFileSync("./server.crt");
+const ca = fs.readFileSync("./server.ca-bundle");
+const key = fs.readFileSync("./server.key");
+const options = {
+  cert: cert,
+  ca: ca,
+  key: key,
+};
+
+const app = express();
+app.use(express.static(buildPath));
 app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server is up on port ${port}!`);
-});
+const httpsServer = https.createServer(options, app);
+httpsServer.listen(port, hostname);
