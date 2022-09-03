@@ -17,14 +17,14 @@ const ProjectShowcase = () => {
           img={images("./personal-website.png")}
           title="Personal Website"
           description="The personal website was made to apply all my knowledge in React.js and frontend development."
-          skills="JavaScript, React.js, Express.js"
+          skills="Node.js, React.js, Express.js, Firebase"
           link="https://thomasjuhoonkim.me"
         />
         <ProjectShowcaseItem
           img={images("./warepair.png")}
           title="Warepair"
           description="Warepair is a web app that bridges the gap between these two groups of people."
-          skills="JavaScript, React.js, Python, Flask, PostgreSQL, Google Maps API"
+          skills="Node.js, React.js, Flask, PostgreSQL, Google Maps API, Heroku"
           link="https://warepair.herokuapp.com/"
         />
         <ProjectShowcaseItem
