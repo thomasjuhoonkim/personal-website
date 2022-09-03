@@ -11,11 +11,11 @@ const hostname = process.env.HOST || "localhost";
 const buildPath = path.join(__dirname, "../client/build");
 
 const cert = fs.readFileSync("./ssl/server.crt", "utf8");
-// const ca = fs.readFileSync("./ssl/server.ca-bundle", "utf8");
+const ca = fs.readFileSync("./ssl/server.ca-bundle", "utf8");
 const key = fs.readFileSync("./ssl/server.key", "utf8");
 const options = {
   cert: cert,
-  // ca: ca,
+  ca: ca,
   key: key,
 };
 
@@ -24,11 +24,17 @@ app.use(express.static(buildPath));
 app.get("*", (req, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
+app.use((req, res, next) => {
+  if (req.protocol === "http") {
+    res.redirect(301, `https://${req.headers.host}${req.url}`);
+  }
+  next();
+});
 
-// const httpServer = http.createServer(app);
-// httpServer.listen(httpPort, () => {
-//   console.log(`HTTP Server is running on port ${httpPort}!`);
-// });
+const httpServer = http.createServer(app);
+httpServer.listen(httpPort, () => {
+  console.log(`HTTP Server is running on port ${httpPort}!`);
+});
 
 const httpsServer = https.createServer(options, app);
 httpsServer.listen(httpsPort, () => {
