@@ -13,19 +13,20 @@
     align-items: center;
     gap: 35px;
     .icon-container {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
       width: 30px;
       height: 30px;
       border-radius: 100%;
       background: var(--font-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       transition: transform .1s ease, background .5s ease;
       cursor: pointer;
       &:hover {
         transform: scale(1.2);
       }
       .icon {
+        // margin-bottom: -3px;
         color: var(--bg-color);
         transition: color .5s ease;
       }
