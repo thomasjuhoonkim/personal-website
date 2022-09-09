@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { DarkModeContext } from "./context/DarkModeContext";
+import CookieConsent from "react-cookie-consent";
 
 import Template from "./components/Template/Template";
 import Home from "./views/Home";
@@ -12,7 +13,7 @@ import Contact from "./views/Contact";
 import "./App.css";
 
 function App() {
-  const { theme } = useContext(DarkModeContext);
+  const { theme, handleCookieAccept } = useContext(DarkModeContext);
   document.querySelector("html").setAttribute("data-theme", theme);
   return (
     <BrowserRouter>
@@ -32,6 +33,28 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
+      <CookieConsent
+        location="bottom"
+        enableDeclineButton
+        buttonText="Allow Cookies"
+        declineButtonText="Dark Mode is Boring"
+        flipButtons={true}
+        style={{
+          background: "var(--font-color)",
+          color: "var(--bg-color)",
+          transition: "background .5s ease, color .5s ease",
+        }}
+        buttonStyle={{
+          borderRadius: 10,
+          marginLeft: 15,
+          marginRight: 0,
+        }}
+        declineButtonStyle={{ borderRadius: 10 }}
+        onAccept={handleCookieAccept}
+      >
+        This website uses cookies to save theme preferences. You can change
+        themes by clicking the doodle on the top left.
+      </CookieConsent>
     </BrowserRouter>
   );
 }

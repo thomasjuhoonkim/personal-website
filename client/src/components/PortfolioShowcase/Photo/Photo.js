@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
-
-import { DarkModeContext } from "../../../context/DarkModeContext";
+import React from "react";
 
 import loading from "../../../assets/loading.svg";
 import "./Photo.scoped.scss";
 
 const Photo = (props) => {
-  const { theme } = useContext(DarkModeContext);
-
   const downloadingImage = new Image();
   downloadingImage.onload = () => {
     const image = document.getElementById(`grid-image--${props.index}`);
@@ -26,7 +22,6 @@ const Photo = (props) => {
         id={`grid-image--${props.index}`}
         src={loading}
         alt={`Gallery Item ${props.index}`}
-        data-theme={theme}
       />
     </figure>
   );
