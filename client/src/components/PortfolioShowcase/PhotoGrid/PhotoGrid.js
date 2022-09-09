@@ -5,10 +5,13 @@ import Photo from "../Photo/Photo";
 import "./PhotoGrid.scss";
 
 const PhotoGrid = () => {
+  const images = require.context("../../../assets/portfolio", true);
   const getImageElements = (images) => {
     let elements = [];
     for (let index = 0; index < images.keys().length; index++) {
-      elements.push(<Photo />);
+      elements.push(
+        <Photo index={index} image={images(`./${index}.jpg`)} key={index} />
+      );
     }
     return elements;
   };
