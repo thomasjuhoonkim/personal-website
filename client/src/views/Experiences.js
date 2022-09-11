@@ -8,7 +8,7 @@ import "./Experiences.scoped.scss";
 const Experiences = () => {
   return (
     <div className="experiences-container">
-      <h1 className="experiences-title">where i've worked at</h1>
+      <h1 className="experiences-title">Work Experience</h1>
       <Timeline />
       <ProjectShowcase />
     </div>

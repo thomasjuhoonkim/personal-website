@@ -11,8 +11,15 @@ const ProjectShowcase = () => {
   const images = require.context("../../assets/side-projects", true);
   return (
     <>
-      <h1 className="project-title">side projects</h1>
+      <h1 className="project-title">Side Projects</h1>
       <div className="project-showcase-container">
+        <ProjectShowcaseItem
+          img={images("./e-commerce.png")}
+          title="E-Commerce Website"
+          description="Made a fully functioning e-commerce website with api-based backend and stripe payments."
+          skills="React.js, MUI, Commerce.js, Stripe.js, Web APIs, Firebase"
+          link="https://e-commerce-1010.web.app"
+        />
         <ProjectShowcaseItem
           img={images("./personal-website.png")}
           title="Personal Website"
