@@ -50,28 +50,28 @@ const ProjectShowcase = () => {
           link="https://thomasjuhoonkim.github.io/odin-etch-a-sketch/"
         />
         <ProjectShowcaseItem
-          img={images("./default.png")}
+          img={images("./cryptopals.jpeg")}
           title="Cryptopals Challenges"
           description="Cryptopals is a collection of exercises that demonstrate attacks on real-world cryptography"
           skills="Cryptology, Data Analysis, C++, Python, Crypto.Cipher"
           link="https://github.com/thomasjuhoonkim/cryptopals-challenges"
         />
         <ProjectShowcaseItem
-          img={images("./default.png")}
+          img={images("./tetris.jpg")}
           title="C++ Tetris"
           description="Tetris game made with SFML interface and C++."
           skills="C++, SFML"
           link="https://github.com/thomasjuhoonkim/cpp-tetris"
         />
         <ProjectShowcaseItem
-          img={images("./default.png")}
+          img={images("./absorbing-markov-chains.jpg")}
           title="Absorbing Markov Chains"
           description="Python 2.7 module for matrix operations and absorbing markov chain determination. Used module for the Google Foobar challenge."
           skills="Python 2.7, Graphs"
           link="https://github.com/thomasjuhoonkim/absorbing-markov-chain"
         />
         <ProjectShowcaseItem
-          img={images("./default.png")}
+          img={images("./hydroponics.png")}
           title="Hydroponics Store Scraper"
           description="A webscraper that scrapes all hydroponics store information from Google Maps using the Selenium library from Python."
           skills="Python, Selenium"
