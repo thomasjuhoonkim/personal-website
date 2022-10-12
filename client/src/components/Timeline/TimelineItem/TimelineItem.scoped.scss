@@ -5,6 +5,8 @@
   align-items: center;
   transition: color .5s ease;
   .icon-container {
+    // webkit transform fixes scroll z-index bug
+    -webkit-transform: translate3d(0,0,0);
     z-index: 1;
     margin-right: 2.25rem;
     background: var(--font-color);
