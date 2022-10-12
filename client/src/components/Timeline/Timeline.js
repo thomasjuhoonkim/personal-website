@@ -17,8 +17,9 @@ const Timeline = () => {
         responsibilities={[
           "Developed python scripts that automate repetitive excel based tasks such as sheet parsing duplicatematching, formatting, and delivery route optimization.",
           "Reduced excel based task times by 90%, allowing company stakeholders to focus on priority business operations.",
+          "Built the front and backend for an internal web-based tool using React and Flask that allows stakeholders to utilize the python automation scripts.",
         ]}
-        skills="Python, Selenium, Google Maps API, Openpyxl, Excel"
+        skills="React, Flask, Heroku, Python, Selenium, Google Maps API, Openpyxl, Excel"
         link="/"
       />
       <TimelineItem
