@@ -1,10 +1,6 @@
-.project-title {
-  margin-top: 36px;
-  color: var(--font-color);
-  transition: color .5s ease;
-}
 .project-showcase-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 18px;
@@ -22,7 +18,7 @@ button {
   color: var(--bg-color);
   font-weight: 700;
   font-size: 12px;
-  transition: transform .1s ease, color .5s ease;
+  transition: transform 0.1s ease, color 0.5s ease;
   cursor: pointer;
   &:hover {
     transform: scale(1.1);
@@ -30,10 +26,6 @@ button {
 }
 
 @media only screen and (max-width: 800px) {
-  .project-title {
-    margin-top: 4rem;
-    font-size: 26px;
-  }
   .project-showcase-container {
     justify-content: center;
     gap: 18px;

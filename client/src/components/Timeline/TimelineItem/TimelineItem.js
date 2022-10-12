@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./TimelineItem.scoped.scss";
 
 const TimelineItem = (props) => {
-  const responsibilities = props.responsibilities.map((item) => {
-    return <li>{item}</li>;
+  const responsibilities = props.responsibilities.map((item, i) => {
+    return <li key={i}>{item}</li>;
   });
 
   return (

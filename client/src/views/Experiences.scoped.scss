@@ -3,8 +3,42 @@
   .experiences-title {
     color: var(--font-color);
     font-size: 36px;
-    transition: color .5s ease;
+    transition: color 0.5s ease;
   }
+}
+
+.download-container {
+  margin-top: 36px;
+  text-align: center;
+  .download-heading {
+    margin-bottom: 10px;
+    color: var(--font-color);
+    transition: color 0.5s ease;
+  }
+  .download-button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--font-color);
+    color: var(--bg-color);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 16px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.075);
+    }
+    transition: color 0.5s ease, background 0.5s ease, transform 0.1s ease;
+  }
+}
+
+.project-title {
+  margin-top: 50px;
+  font-size: 36px;
+  color: var(--font-color);
+  transition: color 0.5s ease;
+  text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
@@ -12,5 +46,15 @@
     .experiences-title {
       font-size: 26px;
     }
+  }
+  .download-container {
+    margin-top: 3.5rem;
+    .download-heading {
+      font-size: 18px;
+    }
+  }
+  .project-title {
+    margin-top: 3rem;
+    font-size: 26px;
   }
 }

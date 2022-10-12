@@ -11,7 +11,6 @@ const ProjectShowcase = () => {
   const images = require.context("../../assets/side-projects", true);
   return (
     <>
-      <h1 className="project-title">Side Projects</h1>
       <div className="project-showcase-container">
         <ProjectShowcaseItem
           img={images("./e-commerce.png")}
