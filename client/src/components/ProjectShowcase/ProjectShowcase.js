@@ -13,6 +13,13 @@ const ProjectShowcase = () => {
     <>
       <div className="project-showcase-container">
         <ProjectShowcaseItem
+          img={images("./login-system.png")}
+          title="Login-System"
+          description="A login system with registration, login, and JSON web tokens."
+          skills="Express.js, JSON Web Tokens, Cookies, Sessions, MySQL, React.js, Firebase, Heroku"
+          link="https://login-system-1010.web.app"
+        />
+        <ProjectShowcaseItem
           img={images("./e-commerce.png")}
           title="E-Commerce Website"
           description="Made a fully functioning e-commerce website with api-based backend and stripe payments."
