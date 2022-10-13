@@ -1,4 +1,7 @@
 .nav-logo {
+  // disable touch on ios
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
   width: 90px;
   height: 90px;
   display: flex;
@@ -9,7 +12,7 @@
     z-index: 1;
     width: 77.5px;
     transform: translate(1px, 0);
-    transition: filter .5s ease;
+    transition: filter 0.5s ease;
   }
   img:hover {
     filter: drop-shadow(0 0 2px var(--font-color));
@@ -27,9 +30,9 @@
       position: absolute;
       top: 17.5%;
       left: -7.5%;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       .outer {
-        position:absolute;
+        position: absolute;
         top: -30px;
         background: #fce570;
         width: 27.5px;
@@ -63,7 +66,7 @@
       width: 27.5px;
       height: 27.5px;
       border-radius: 100%;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       &:before {
         content: "";
         position: absolute;
@@ -96,13 +99,13 @@
         height: 10px;
         background: white;
         border-radius: 100px;
-        transition: background .5s ease;
+        transition: background 0.5s ease;
       }
       .circle {
         border-radius: 100%;
         background: white;
         position: absolute;
-        transition: background .5s ease;
+        transition: background 0.5s ease;
       }
       .circle-lg {
         width: 10px;
@@ -134,28 +137,29 @@
 .nav-logo[data-theme="light"] {
   .sun {
     opacity: 0.9;
-    animation: moveSunIn .5s ease;
+    animation: moveSunIn 0.5s ease;
     .outer {
       animation: rotateSun 8s infinite linear;
     }
   }
   .moon {
     opacity: 0;
-    animation: moveMoonOut .5s ease;
+    animation: moveMoonOut 0.5s ease;
   }
 }
 
 .nav-logo[data-theme="dark"] {
   .sun {
     opacity: 0;
-    animation: moveSunOut .5s ease;
+    animation: moveSunOut 0.5s ease;
   }
   .moon {
     opacity: 0.9;
-    animation: moveMoonIn .5s ease;
+    animation: moveMoonIn 0.5s ease;
   }
   img {
-    filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg) brightness(117%) contrast(90%);
+    filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg)
+      brightness(117%) contrast(90%);
   }
 }
 
