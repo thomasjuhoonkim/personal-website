@@ -19,9 +19,9 @@
     width: 77.5px;
     transform: translate(1px, 0);
     transition: filter 0.5s ease;
-  }
-  img:hover {
-    filter: drop-shadow(0 0 2px var(--font-color));
+    &:hover {
+      filter: drop-shadow(0 0 2px var(--font-color));
+    }
   }
 
   // SKY
@@ -213,5 +213,14 @@ svg {
 @media only screen and (max-width: 800px) {
   .nav-logo {
     margin-left: 1rem;
+    img:hover {
+      filter: none;
+    }
+  }
+  .nav-logo[data-theme="dark"] {
+    img {
+      filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg)
+        brightness(117%) contrast(90%);
+    }
   }
 }
