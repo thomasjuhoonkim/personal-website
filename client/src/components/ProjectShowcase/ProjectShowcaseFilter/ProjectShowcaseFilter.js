@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./ProjectShowcaseFilter.scoped.scss";
 
-const ProjectShowcaseFilter = ({ onFilterSelect }) => {
-  const [selectedFilter, setSelectedFilter] = useState("All");
-
-  const filters = [
+const ProjectShowcaseFilter = ({ filter, setFilter }) => {
+  const filtersArray = [
     "All",
     "Python",
     "C++",
@@ -19,26 +17,21 @@ const ProjectShowcaseFilter = ({ onFilterSelect }) => {
   ];
 
   const getFilters = () => {
-    return filters.map((filter, i) => {
+    return filtersArray.map((filterItem, i) => {
       return (
         <button
-          onClick={handleClick}
+          onClick={(e) => setFilter(e.target.innerHTML)}
           className={
-            filter === selectedFilter
+            filterItem === filter
               ? "filter-button filter-button-selected"
               : "filter-button"
           }
           key={i}
         >
-          {filter}
+          {filterItem}
         </button>
       );
     });
-  };
-
-  const handleClick = (e) => {
-    onFilterSelect(e.target.innerHTML);
-    setSelectedFilter(e.target.innerHTML);
   };
 
   return <div className="project-showcase-filter">{getFilters()}</div>;

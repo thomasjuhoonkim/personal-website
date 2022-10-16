@@ -18,7 +18,7 @@ const ProjectShowcase = () => {
     return Projects.map((project, i) => {
       const projectComponent = (
         <ProjectShowcaseItem
-          key={i}
+          key={filter + String(i)}
           img={project.img}
           imgStyle={project.imgStyle}
           title={project.title}
@@ -35,7 +35,7 @@ const ProjectShowcase = () => {
 
   return (
     <>
-      <ProjectShowcaseFilter onFilterSelect={setFilter} />
+      <ProjectShowcaseFilter filter={filter} setFilter={setFilter} />
       <div className="project-showcase-container">
         <AnimatePresence>{getProjects()}</AnimatePresence>
       </div>
