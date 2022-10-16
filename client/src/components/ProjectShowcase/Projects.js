@@ -75,7 +75,7 @@ const Projects = [
   },
   {
     img: images("./absorbing-markov-chains.jpg"),
-    titile: "Absorbing Markov Chains",
+    title: "Absorbing Markov Chains",
     description:
       "Python 2.7 module for matrix operations and absorbing markov chain determination. Used module for the Google Foobar challenge.",
     skills: "Python, Graphs",
