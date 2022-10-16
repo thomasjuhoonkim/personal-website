@@ -2,6 +2,7 @@
   a {
     text-decoration: none;
   }
+  background: var(--bg-color);
   border: 1px solid var(--font-color);
   border-radius: 25px;
   height: 325px;
@@ -9,7 +10,8 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.1s ease, transform 0.1s ease, border 0.5s ease;
+  transition: box-shadow 0.1s ease, transform 0.1s ease, border 0.5s ease,
+    background 0.5s ease;
   &:hover {
     transform: scale(1.035);
   }
@@ -52,5 +54,12 @@
     .text-container {
       margin-left: 10px;
     }
+  }
+}
+
+@keyframes introduce {
+  0% {
+    opacity: 0;
+    // transform: scale(0);
   }
 }

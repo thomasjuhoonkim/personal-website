@@ -7,9 +7,10 @@ import "./Timeline.scoped.scss";
 
 const Timeline = () => {
   const getExperiences = () => {
-    return Experiences.map((experience) => {
+    return Experiences.map((experience, i) => {
       return (
         <TimelineItem
+          key={i}
           icon={experience.icon}
           title={experience.title}
           location={experience.location}

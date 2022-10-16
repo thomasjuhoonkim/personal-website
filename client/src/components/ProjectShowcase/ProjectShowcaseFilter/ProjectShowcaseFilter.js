@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ProjectShowcaseFilter.scoped.scss";
 
-const ProjectShowcaseFilter = (props) => {
+const ProjectShowcaseFilter = ({ onFilterSelect }) => {
   const [selectedFilter, setSelectedFilter] = useState("All");
 
   const filters = [
@@ -37,7 +37,7 @@ const ProjectShowcaseFilter = (props) => {
   };
 
   const handleClick = (e) => {
-    props.onFilterSelect(e.target.innerHTML);
+    onFilterSelect(e.target.innerHTML);
     setSelectedFilter(e.target.innerHTML);
   };
 

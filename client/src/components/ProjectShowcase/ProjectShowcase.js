@@ -3,21 +3,18 @@ import React, { useState } from "react";
 import ProjectShowcaseItem from "./ProjectShowcaseItem/ProjectShowcaseItem";
 import ProjectShowcaseFilter from "./ProjectShowcaseFilter/ProjectShowcaseFilter";
 import Projects from "./Projects";
+import { AnimatePresence } from "framer-motion";
 
 import "./ProjectShowcase.scoped.scss";
 
 const ProjectShowcase = () => {
   const [filter, setFilter] = useState("All");
 
-  const onFilterSelect = (selectedFilter) => {
-    setFilter(selectedFilter);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const getProjects = (filter) => {
+  const getProjects = () => {
     return Projects.map((project, i) => {
       const projectComponent = (
         <ProjectShowcaseItem
@@ -38,8 +35,10 @@ const ProjectShowcase = () => {
 
   return (
     <>
-      <ProjectShowcaseFilter onFilterSelect={onFilterSelect} />
-      <div className="project-showcase-container">{getProjects(filter)}</div>
+      <ProjectShowcaseFilter onFilterSelect={setFilter} />
+      <div className="project-showcase-container">
+        <AnimatePresence>{getProjects()}</AnimatePresence>
+      </div>
       <button onClick={scrollToTop}>Back to the Top</button>
     </>
   );
