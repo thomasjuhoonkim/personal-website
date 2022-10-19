@@ -1,13 +1,31 @@
 const images = require.context("../../assets/side-projects", true);
 const Projects = [
   {
+    img: images("./default.png"),
+    title: "Coming Soon",
+    description:
+      "These projects are currently in the works! Check back again to see if they are done!",
+    skills: "React Native, Golang, Docker",
+    skillsArray: ["React Native", "Golang", "Docker"],
+    link: "/",
+  },
+  {
+    img: images("./tic-tac-toe.png"),
+    title: "Tic-Tac-Toe",
+    description:
+      "This project was done in pure JavaScript to touch up on JavaScript fundamentals.",
+    skills: "HTML, CSS, JavaScript",
+    skillsArray: ["All", "JavaScript"],
+    link: "/",
+  },
+  {
     img: images("./login-system.png"),
     title: "Login-System",
     description:
       "A login system with registration, login, and JSON web tokens.",
     skills:
       "Express, JSON Web Tokens, Cookies, Sessions, MySQL, React, Firebase, Heroku",
-    skillsArray: ["Express", "MySQL", "React", "Firebase", "Heroku"],
+    skillsArray: ["All", "Express", "MySQL", "React", "Firebase", "Heroku"],
     link: "https://login-system-1010.web.app",
   },
   {
@@ -16,7 +34,7 @@ const Projects = [
     description:
       "Made a fully functioning e-commerce website with API backend and stripe payments.",
     skills: "React, MUI, Commerce.js, Web APIs, Firebase",
-    skillsArray: ["React", "Firebase"],
+    skillsArray: ["All", "React", "Firebase"],
     link: "https://www.e-commerce-1010.web.app",
   },
   {
@@ -25,7 +43,7 @@ const Projects = [
     description:
       "The personal website was made to apply all my knowledge in React.js and frontend development.",
     skills: "Node, React, Express, Firebase",
-    skillsArray: ["Node", "React", "Express", "Firebase"],
+    skillsArray: ["All", "Node", "React", "Express", "Firebase"],
     link: "https://www.thomasjuhoonkim.me",
   },
   {
@@ -34,7 +52,7 @@ const Projects = [
     description:
       "Warepair is a web app that bridges the gap between contractors and homeowners.",
     skills: "Node, React, Flask, PostgreSQL, Google Maps API, Heroku",
-    skillsArray: ["Node", "React", "Flask", "PostgreSQL", "Heroku"],
+    skillsArray: ["All", "Node", "React", "Flask", "PostgreSQL", "Heroku"],
     link: "https://warepair.herokuapp.com",
   },
   {
@@ -44,7 +62,7 @@ const Projects = [
     description:
       "The calculator project was made to compile all my HTML/CSS/JavaScript knowledge from the Odin Project.",
     skills: "HTML, CSS, Javascript",
-    skillsArray: ["HTML/CSS/JS"],
+    skillsArray: ["All", "JavaScript"],
     link: "https://thomasjuhoonkim.github.io/odin-calculator",
   },
   {
@@ -53,7 +71,7 @@ const Projects = [
     description:
       "The etch-a-sketch project was made to compile all my HTML/CSS/JavaScript knowledge from the Odin Project.",
     skills: "HTML, CSS, Javascript",
-    skillsArray: ["HTML/CSS/JS"],
+    skillsArray: ["All", "JavaScript"],
     link: "https://thomasjuhoonkim.github.io/odin-etch-a-sketch",
   },
   {
@@ -62,7 +80,7 @@ const Projects = [
     description:
       "Cryptopals is a collection of exercises that demonstrate attacks on real-world cryptography",
     skills: "Cryptology, Data Analysis, C++, Python, Crypto.Cipher",
-    skillsArray: ["C++", "Python"],
+    skillsArray: ["All", "C++", "Python"],
     link: "https://github.com/thomasjuhoonkim/cryptopals-challenges",
   },
   {
@@ -70,7 +88,7 @@ const Projects = [
     title: "C++ Tetris",
     description: "Tetris game made with SFML interface and C++.",
     skills: "C++, SFML",
-    skillsArray: ["C++"],
+    skillsArray: ["All", "C++"],
     link: "https://github.com/thomasjuhoonkim/cpp-tetis",
   },
   {
@@ -79,7 +97,7 @@ const Projects = [
     description:
       "Python 2.7 module for matrix operations and absorbing markov chain determination. Used module for the Google Foobar challenge.",
     skills: "Python, Graphs",
-    skillsArray: ["Python"],
+    skillsArray: ["All", "Python"],
     link: "https://github.com/thomasjuhoonkim/absorbing-markov-chains",
   },
   {
@@ -88,7 +106,7 @@ const Projects = [
     description:
       "A webscraper that scrapes all hydroponics store information from Google Maps using the Selenium Library from Python.",
     skills: "Python, Selenium",
-    skillsArray: ["Python"],
+    skillsArray: ["All", "Python"],
     link: "https://github.com/thomasjuhoonkim/hydroponics-database",
   },
 ];

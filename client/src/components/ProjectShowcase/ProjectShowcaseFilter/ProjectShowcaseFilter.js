@@ -7,13 +7,17 @@ const ProjectShowcaseFilter = ({ filter, setFilter }) => {
     "All",
     "Python",
     "C++",
+    "JavaScript",
+    "Golang",
     "React",
+    "React Native",
     "Node",
     "Express",
     "MySQL",
     "PostgreSQL",
     "Heroku",
     "Firebase",
+    "Docker",
   ];
 
   const getFilters = () => {

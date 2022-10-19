@@ -27,7 +27,8 @@ const ProjectShowcase = () => {
           link={project.link}
         />
       );
-      if (filter === "All") return projectComponent;
+      // keep this off while new projects are made with specific filters i.e (react native, golang, docker, etc)
+      // if (filter === "All") return projectComponent;
       if (project.skillsArray.includes(filter)) return projectComponent;
       return null;
     });
