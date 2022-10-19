@@ -16,7 +16,7 @@ const Projects = [
       "This project was done in pure JavaScript to touch up on JavaScript fundamentals.",
     skills: "HTML, CSS, JavaScript",
     skillsArray: ["All", "JavaScript"],
-    link: "/",
+    link: "https://thomasjuhoonkim.github.io/js-tic-tac-toe/",
   },
   {
     img: images("./login-system.png"),
