@@ -10,15 +10,6 @@ const Projects = [
     link: "/",
   },
   {
-    img: images("./goose-game.png"),
-    title: "Goose Game",
-    description:
-      "The Goose Game is a game written in C++ using the BearLibTerminal. The objective is to escape the goose while avoiding the walls.",
-    skills: "C++, BearLibTerminal",
-    skillsArray: ["All", "C++"],
-    link: "https://github.com/thomasjuhoonkim/goose-game",
-  },
-  {
     img: images("./tic-tac-toe.png"),
     title: "Tic-Tac-Toe",
     description:
