@@ -3,12 +3,8 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { DarkModeContext } from "./context/DarkModeContext";
 import CookieConsent from "react-cookie-consent";
 
-import Template from "./components/Template/Template";
-import Home from "./views/Home";
-import About from "./views/About";
-import Experiences from "./views/Experiences";
-import Portfolio from "./views/Portfolio";
-import Contact from "./views/Contact";
+import { Template } from "./components/index";
+import { Home, About, Experience, Portfolio, Contact } from "./views/index";
 
 import "./App.css";
 
@@ -28,7 +24,7 @@ function App() {
         >
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/experiences" element={<Experience />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Route>

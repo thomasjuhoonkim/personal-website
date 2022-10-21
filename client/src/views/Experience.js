@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Timeline from "../components/Timeline/Timeline";
-import ProjectShowcase from "../components/ProjectShowcase/ProjectShowcase";
+import { Timeline, ProjectShowcase } from "../components/index";
 
-import "./Experiences.scoped.scss";
+import "./Experience.scoped.scss";
 
 const Experiences = () => {
   return (

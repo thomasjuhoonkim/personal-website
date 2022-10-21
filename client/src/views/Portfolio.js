@@ -1,6 +1,6 @@
 import React from "react";
 
-import PortfolioShowcase from "../components/PortfolioShowcase/PortfolioShowcase";
+import { PortfolioShowcase } from "../components/index";
 
 import "./Portfolio.scoped.scss";
 
