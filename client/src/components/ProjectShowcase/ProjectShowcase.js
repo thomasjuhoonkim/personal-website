@@ -14,9 +14,33 @@ const ProjectShowcase = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // const getProjects = () => {
+  //   return Projects.map((project, i) => {
+  //     const projectComponent = (
+  //       <ProjectShowcaseItem
+  //         key={filter + String(i)}
+  //         img={project.img}
+  //         imgStyle={project.imgStyle}
+  //         title={project.title}
+  //         description={project.description}
+  //         skills={project.skills}
+  //         link={project.link}
+  //       />
+  //     );
+  //     // keep this off while new projects are made with specific filters i.e (react native, golang, docker, etc)
+  //     // if (filter === "All") return projectComponent;
+  //     if (project.skillsArray.includes(filter)) return projectComponent;
+  //     return null;
+  //   });
+  // };
+
+  // cleaner implementation of filter for now
   const getProjects = () => {
-    return Projects.map((project, i) => {
-      const projectComponent = (
+    const filteredProjects = Projects.filter((project) =>
+      project.skillsArray.includes(filter)
+    );
+    return filteredProjects.map((project, i) => {
+      return (
         <ProjectShowcaseItem
           key={filter + String(i)}
           img={project.img}
@@ -27,10 +51,6 @@ const ProjectShowcase = () => {
           link={project.link}
         />
       );
-      // keep this off while new projects are made with specific filters i.e (react native, golang, docker, etc)
-      // if (filter === "All") return projectComponent;
-      if (project.skillsArray.includes(filter)) return projectComponent;
-      return null;
     });
   };
 
