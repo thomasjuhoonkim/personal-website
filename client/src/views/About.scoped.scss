@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   color: var(--font-color);
-  transition: color .5s ease;
+  transition: color 0.5s ease;
   h1 {
     font-size: 45px;
     line-height: 45px;
@@ -12,7 +12,7 @@
   p {
     font-size: 14px;
   }
-  img {
+  .about-image {
     width: 25vw;
     margin-left: 60px;
   }
@@ -45,11 +45,22 @@
     p {
       font-size: 11px;
     }
-    img {
+    .about-image {
       margin-top: 1rem;
       margin-bottom: -1rem;
       margin-left: 0;
       width: 100%;
     }
   }
+}
+
+[data-theme="light"] .loading {
+  filter: invert(9%) sepia(15%) saturate(7%) hue-rotate(318deg) brightness(102%)
+    contrast(93%);
+  transition: filter 0.5s ease;
+}
+[data-theme="dark"] .loading {
+  filter: invert(100%) sepia(68%) saturate(38%) hue-rotate(155deg)
+    brightness(115%) contrast(90%);
+  transition: filter 0.5s ease;
 }

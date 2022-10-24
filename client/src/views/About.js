@@ -2,7 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./About.scoped.scss";
+import loading from "../assets/loading.svg";
 import pls from "../assets/pls.jpg";
+
+const AsyncImage = (props) => {
+  const [loadedSrc, setLoadedSrc] = React.useState(null);
+  React.useEffect(() => {
+    const handleLoad = () => setLoadedSrc(props.src);
+    const image = new Image();
+    image.addEventListener("load", handleLoad);
+    image.src = props.src;
+    return () => image.removeEventListener("load", handleLoad);
+  }, [props.src]);
+
+  return (
+    <img
+      className={
+        loadedSrc === props.src ? props.className : props.className + " loading"
+      }
+      src={loadedSrc === props.src ? props.src : loading}
+      alt={props.alt}
+      title={props.title}
+    />
+  );
+};
 
 const About = () => {
   return (
@@ -62,10 +85,11 @@ const About = () => {
         </p>
         <p>Thanks for stopping by!</p>
       </div>
-      <img
+      <AsyncImage
         src={pls}
         alt="Please get me out of here"
         title="I look very uncomfortable by my sister"
+        className="about-image"
       />
     </div>
   );

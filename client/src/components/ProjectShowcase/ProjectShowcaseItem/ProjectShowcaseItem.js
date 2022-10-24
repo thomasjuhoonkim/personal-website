@@ -2,7 +2,30 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
+import loading from "../../../assets/loading.svg";
 import "./ProjectShowcaseItem.scoped.scss";
+
+const AsyncImage = (props) => {
+  const [loadedSrc, setLoadedSrc] = React.useState(null);
+  React.useEffect(() => {
+    const handleLoad = () => setLoadedSrc(props.src);
+    const image = new Image();
+    image.addEventListener("load", handleLoad);
+    image.src = props.src;
+    return () => image.removeEventListener("load", handleLoad);
+  }, [props.src]);
+
+  return (
+    <img
+      className={
+        loadedSrc === props.src ? props.className : props.className + " loading"
+      }
+      src={loadedSrc === props.src ? props.src : loading}
+      alt={props.alt}
+      title={props.title}
+    />
+  );
+};
 
 const ProjectShowcaseItem = (props) => {
   return (
@@ -15,10 +38,11 @@ const ProjectShowcaseItem = (props) => {
       <div className="project-showcase-item-container">
         <a href={props.link} target="_blank" rel="noreferrer">
           <div className="image-container">
-            <img
+            <AsyncImage
               src={props.img}
               alt="Side-project preview"
               style={props.imgStyle}
+              className="image"
             />
           </div>
           <div className="text-container">
