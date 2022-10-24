@@ -1,25 +1,10 @@
 import React from "react";
 
+import filtersArray from "../Filters";
+
 import "./ProjectShowcaseFilter.scoped.scss";
 
 const ProjectShowcaseFilter = ({ filter, setFilter }) => {
-  const filtersArray = [
-    "All",
-    "Python",
-    "C++",
-    "JavaScript",
-    "Golang",
-    "React",
-    "React Native",
-    "Node",
-    "Express",
-    "MySQL",
-    "PostgreSQL",
-    "Heroku",
-    "Firebase",
-    "Docker",
-  ];
-
   const getFilters = () => {
     return filtersArray.map((filterItem, i) => {
       return (

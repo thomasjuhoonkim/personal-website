@@ -10,6 +10,15 @@ const Projects = [
     link: "/",
   },
   {
+    img: images("./dasam-bot.png"),
+    title: "Dasam Discord Bot",
+    description:
+      "The Dasam Bot is a Discord Bot that allows users to fetch Valorant player statistics directly from the Discord app.",
+    skills: "Node, Discord, MongoDB",
+    skillsArray: ["All", "Node", "Discord", "MongoDB"],
+    link: "https://github.com/LiAlex-CS/DasamDiscordBot",
+  },
+  {
     img: images("./goose-game.png"),
     title: "Goose Game",
     description:
