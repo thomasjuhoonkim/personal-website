@@ -3,7 +3,9 @@ import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
 const Experiences = [
   {
     icon: faStar,
-    title: "Software Developer @ Four Star",
+    title: "Software Developer",
+    company: "Four Star",
+    companyColor: "#ec3e3d",
     location: "Kitchener, Ontario",
     timeRange: "Mar. 2022 - Present",
     responsibilities: [
@@ -17,7 +19,9 @@ const Experiences = [
   },
   {
     icon: faBolt,
-    title: "Data Analyst @ EnPowered",
+    title: "Data Analyst",
+    company: "EnPowered",
+    companyColor: "#f6cb2a",
     location: "Toronto, Ontario",
     timeRange: "May. 2022 - Aug. 2022",
     responsibilities: [
@@ -31,7 +35,9 @@ const Experiences = [
   },
   {
     icon: faLeaf,
-    title: "Mechanical Design Engineer @ Grobo",
+    title: "Mechanical Design Engineer",
+    company: "Grobo",
+    companyColor: "#a3cf5f",
     location: "Waterloo, Ontario",
     timeRange: "Sep. 2021 - Dec. 2021",
     responsibilities: [

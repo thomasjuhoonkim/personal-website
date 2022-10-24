@@ -10,13 +10,22 @@ const TimelineItem = (props) => {
 
   return (
     <div className="timeline-item">
-      <div className="icon-container">
+      <div
+        className="icon-container"
+        style={{ background: props.companyColor }}
+      >
         <a href={props.link}>
           <FontAwesomeIcon icon={props.icon} className="icon" />
         </a>
       </div>
       <div className="card">
-        <h2>{props.title}</h2>
+        <h2>
+          {props.title + " @ "}
+          {/* <a style={{ color: props.companyColor }} href={props.link}>
+            {props.company}
+          </a> */}
+          {props.company}
+        </h2>
         <h3>{props.timeRange}</h3>
         <ul>{responsibilities}</ul>
         <p>

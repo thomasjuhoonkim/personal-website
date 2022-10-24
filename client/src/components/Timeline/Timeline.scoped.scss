@@ -6,11 +6,11 @@
   flex-direction: column;
 
   .vertical-line {
-    transition: background .5s ease;
+    transition: background 0.5s ease;
     z-index: 0;
     position: absolute;
     top: 10px;
-    left: 22.5px;
+    left: 26.5px;
     width: 5px;
     height: 95%;
     border-radius: 2.5px;
