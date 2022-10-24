@@ -28,6 +28,10 @@ const AsyncImage = (props) => {
 };
 
 const About = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="about-container">
       <div className="text-container">
@@ -91,6 +95,7 @@ const About = () => {
         title="I look very uncomfortable by my sister"
         className="about-image"
       />
+      <button onClick={scrollToTop}>Back to the Top</button>
     </div>
   );
 };
