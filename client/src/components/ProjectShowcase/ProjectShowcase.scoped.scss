@@ -7,7 +7,7 @@
   margin: 0 -3.5rem;
 }
 button {
-  display: none;
+  display: block;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: -30px;
@@ -30,8 +30,5 @@ button {
   .project-showcase-container {
     gap: 18px;
     margin: 0 0;
-  }
-  button {
-    display: block;
   }
 }
