@@ -4,7 +4,14 @@ import { DarkModeContext } from "./context/DarkModeContext";
 import CookieConsent from "react-cookie-consent";
 
 import { Template } from "./components/index";
-import { Home, About, Experience, Portfolio, Contact } from "./views/index";
+import {
+  Home,
+  About,
+  Experience,
+  Portfolio,
+  Contact,
+  FourZeroFour,
+} from "./views/index";
 
 import "./App.css";
 
@@ -28,6 +35,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
+        <Route path="*" element={<FourZeroFour />} />
       </Routes>
       <CookieConsent
         location="bottom"
