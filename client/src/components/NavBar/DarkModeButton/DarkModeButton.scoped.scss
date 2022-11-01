@@ -14,16 +14,21 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  img {
-    position: relative;
+  svg {
     z-index: 1;
+    position: relative;
     width: 77.5px;
+    height: 77.5px;
     transform: translate(1px, 0);
+    animation: buttonSignal 0.4s 5 ease;
+    g {
+      fill: var(--font-color);
+      transition: fill 0.5s ease;
+    }
     transition: filter 0.5s ease;
     &:hover {
       filter: drop-shadow(0 0 2px var(--font-color));
     }
-    animation: buttonSignal 0.4s 5 ease;
   }
 
   // SKY
@@ -165,14 +170,6 @@
     opacity: 0.9;
     animation: moveMoonIn 0.5s ease;
   }
-  img {
-    filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg)
-      brightness(117%) contrast(90%);
-  }
-}
-
-svg {
-  display: none;
 }
 
 @keyframes buttonSignal {
@@ -221,14 +218,8 @@ svg {
 @media only screen and (max-width: 800px) {
   .nav-logo {
     margin-left: 1rem;
-    img:hover {
+    svg:hover {
       filter: none;
-    }
-  }
-  .nav-logo[data-theme="dark"] {
-    img {
-      filter: invert(98%) sepia(1%) saturate(1061%) hue-rotate(80deg)
-        brightness(117%) contrast(90%);
     }
   }
 }
