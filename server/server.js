@@ -1,3 +1,10 @@
+// The client side server has been scrapped due to heroku ssl traffic being
+// blocked at their aws load balancers.
+// This renders my paid ssl certification useless, as such an https server can
+// not be built and deployed on my part.
+
+//==========================================
+
 // const fs = require("fs");
 const path = require("path");
 const express = require("express");
