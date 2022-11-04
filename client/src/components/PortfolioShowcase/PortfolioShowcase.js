@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import PhotoGrid from "./PhotoGrid/PhotoGrid";
+import FullScreenView from "./FullScreenView/FullScreenView";
 
 import cat from "../../assets/cat.png";
 import loading from "../../assets/loading.svg";
 import "./PortfolioShowcase.scoped.scss";
 
 const AsyncImage = (props) => {
-  const [loadedSrc, setLoadedSrc] = React.useState(null);
+  const [loadedSrc, setLoadedSrc] = useState(null);
   React.useEffect(() => {
     const handleLoad = () => setLoadedSrc(props.src);
     const image = new Image();
@@ -29,6 +30,9 @@ const AsyncImage = (props) => {
 };
 
 const PortfolioShowcase = () => {
+  const [clicked, setClicked] = useState(false);
+  const [src, setSrc] = useState(null);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -50,8 +54,14 @@ const PortfolioShowcase = () => {
         <p>Adventure</p>
       </div>
       <hr />
-      <PhotoGrid />
+      <PhotoGrid setClicked={setClicked} setSrc={setSrc} />
       <button onClick={scrollToTop}>Back to the Top</button>
+      <FullScreenView
+        clicked={clicked}
+        setClicked={setClicked}
+        src={src}
+        setSrc={setSrc}
+      />
     </div>
   );
 };
