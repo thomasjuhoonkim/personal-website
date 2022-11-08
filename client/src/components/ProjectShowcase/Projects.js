@@ -38,7 +38,7 @@ const Projects = [
   },
   {
     img: images("./login-system.png"),
-    title: "Login-System",
+    title: "Login System",
     description:
       "A login system with registration, login, and JSON web tokens.",
     skills:

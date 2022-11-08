@@ -5,14 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./FullScreenView.scoped.scss";
 
 const FullScreenView = ({ clicked, setClicked, src, setSrc }) => {
-  function enableScroll() {
-    window.onscroll = function() {};
-  }
-
   const handleClick = () => {
     setClicked(false);
     setSrc(null);
-    enableScroll();
   };
 
   return clicked ? (
