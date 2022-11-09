@@ -10,7 +10,7 @@
     opacity: 80%;
   }
   img {
-    z-index: 2;
+    z-index: 1;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -20,13 +20,30 @@
     object-fit: contain;
   }
   .close-button {
+    color: var(--font-color);
     cursor: pointer;
-    z-index: 2;
+    z-index: 1;
     position: fixed;
-    top: 30px;
-    left: 35px;
+    top: 60px;
+    left: 65px;
     .icon {
       font-size: 40px;
+    }
+    transition: transform .1s ease;
+    &:hover {
+      transform: scale(1.225);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .fullscreen-view-container {
+    .fullscreen-view-background {
+      opacity: 90%;
+    }
+    .close-button {
+      top: 40px;
+      left: 45px;
     }
   }
 }
