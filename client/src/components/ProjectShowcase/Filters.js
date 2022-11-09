@@ -6,6 +6,7 @@ const filtersArray = [
   "Golang",
   "React",
   "React Native",
+  "Three",
   "Node",
   "Express",
   "MySQL",

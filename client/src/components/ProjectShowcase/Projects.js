@@ -10,6 +10,16 @@ const Projects = [
     link: "/",
   },
   {
+    img: images("./react-3d-model-component.png"),
+    title: "React 3D Model Viewer",
+    description:
+      "A react component to view a single 3D model in STL format using three.js.",
+    skills:
+      "React, Three, React Three Fiber, WebGL, NPM, Firebase, Github Actions",
+    skillsArray: ["All", "React", "Three"],
+    link: "https://www.npmjs.com/package/react-3d-model-component",
+  },
+  {
     img: images("./dasam-bot.png"),
     title: "Dasam Discord Bot",
     description:
