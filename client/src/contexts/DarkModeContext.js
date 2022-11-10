@@ -14,9 +14,7 @@ function DarkModeProvider(props) {
 
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    if (getCookieConsentValue()) {
-      localStorage.setItem("theme", newTheme);
-    }
+    if (getCookieConsentValue()) localStorage.setItem("theme", newTheme);
     setTheme(newTheme);
   };
 

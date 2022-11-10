@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { DarkModeContext } from "./context/DarkModeContext";
+import { DarkModeContext } from "./contexts/DarkModeContext";
 import CookieConsent from "react-cookie-consent";
 
 import { Template } from "./components/index";
