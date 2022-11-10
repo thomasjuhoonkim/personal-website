@@ -16,7 +16,7 @@ import {
 import "./App.css";
 
 function App() {
-  const { theme, handleCookieAccept } = useContext(DarkModeContext);
+  const { theme } = useContext(DarkModeContext);
   document.querySelector("html").setAttribute("data-theme", theme);
   return (
     <BrowserRouter>
@@ -54,7 +54,6 @@ function App() {
           marginRight: 0,
         }}
         declineButtonStyle={{ borderRadius: 10 }}
-        onAccept={handleCookieAccept}
       >
         This website uses cookies to save theme preferences. You can change
         themes by clicking the doodle on the top left.
