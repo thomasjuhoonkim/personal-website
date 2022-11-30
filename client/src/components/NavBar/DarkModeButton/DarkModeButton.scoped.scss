@@ -20,7 +20,8 @@
     width: 77.5px;
     height: 77.5px;
     transform: translate(1px, 0);
-    animation: buttonSignal 0.4s 5 ease;
+    // removed button signal on page load
+    // animation: buttonSignal 0.4s 5 ease;
     g {
       fill: var(--font-color);
       transition: fill 0.5s ease;
