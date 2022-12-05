@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
 
 const setWithExpiry = (key, value, ttl) => {
@@ -28,6 +28,15 @@ const getWithExpiry = (key) => {
 const DarkModeContext = createContext();
 
 function DarkModeProvider(props) {
+  useEffect(() => {
+    if (
+      localStorage.getItem("theme") === "light" ||
+      localStorage.getItem("theme") === "dark"
+    ) {
+      localStorage.removeItem("theme");
+    }
+  }, []);
+
   const [theme, setTheme] = useState(
     getCookieConsentValue()
       ? getWithExpiry("theme")
