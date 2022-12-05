@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
 
 function isJsonString(str) {
@@ -22,8 +22,8 @@ const setWithExpiry = (key, value, ttl) => {
 const getWithExpiry = (key) => {
   const itemStr = localStorage.getItem(key);
 
-  if (!itemStr) return null;
-  if (!isJsonString(itemStr)) return null;
+  if (!itemStr) return "light";
+  if (!isJsonString(itemStr)) return "light";
 
   const item = JSON.parse(itemStr);
   const now = new Date();
@@ -38,15 +38,6 @@ const getWithExpiry = (key) => {
 const DarkModeContext = createContext();
 
 function DarkModeProvider(props) {
-  useEffect(() => {
-    if (
-      localStorage.getItem("theme") === "light" ||
-      localStorage.getItem("theme") === "dark"
-    ) {
-      localStorage.removeItem("theme");
-    }
-  }, []);
-
   const [theme, setTheme] = useState(
     getCookieConsentValue()
       ? getWithExpiry("theme")
