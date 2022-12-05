@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { DarkModeContext } from "../../../contexts/DarkModeContext";
 
 import "./TimelineItem.scoped.scss";
 
 const TimelineItem = (props) => {
+  const { theme } = useContext(DarkModeContext);
+
   const responsibilities = props.responsibilities.map((item, i) => {
     return <li key={i}>{item}</li>;
   });
@@ -23,11 +27,19 @@ const TimelineItem = (props) => {
               data={props.icon}
               alt="logo"
               class="icon-custom-svg"
+              style={props.iconStyle}
+              data-theme={theme}
             >
               logo
             </object>
           ) : (
-            <img src={props.icon} alt="logo" className="icon-custom" />
+            <img
+              src={props.icon}
+              style={props.iconStyle}
+              alt="logo"
+              className="icon-custom"
+              data-theme={theme}
+            />
           )}
         </a>
       </div>

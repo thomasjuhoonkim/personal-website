@@ -13,6 +13,7 @@ const Timeline = () => {
           key={i}
           icon={experience.icon}
           iconType={experience.iconType}
+          iconStyle={experience.iconStyle}
           title={experience.title}
           company={experience.company}
           companyColor={experience.companyColor}

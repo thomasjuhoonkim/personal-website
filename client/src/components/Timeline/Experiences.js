@@ -1,17 +1,19 @@
-// import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
-import uoft from "../../assets/company-logos/uoft.png";
-import grobo from "../../assets/company-logos/grobo.png";
-import enpowered from "../../assets/company-logos/enpowered.png";
-import fourStar from "../../assets/company-logos/four-star.png";
+import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
+// import uoft from "../../assets/company-logos/uoft.png";
+// import grobo from "../../assets/company-logos/grobo.png";
+// import enpowered from "../../assets/company-logos/enpowered.png";
+// import fourStar from "../../assets/company-logos/four-star.png";
 
 const Experiences = [
   {
-    // icon: faStar,
-    icon: fourStar,
-    iconType: "custom",
+    icon: faStar,
+    // icon: fourStar,
+    iconType: "fa",
+    // iconStyle: {},
     title: "Software Developer",
     company: "Four Star",
     companyColor: "#ec3e3d",
+    // companyColor: "#000",
     location: "Kitchener, Ontario",
     timeRange: "Mar. 2022 - Present",
     responsibilities: [
@@ -25,12 +27,15 @@ const Experiences = [
     link: "/",
   },
   {
-    // icon: faBolt,
-    icon: enpowered,
-    iconType: "custom",
+    icon: faBolt,
+    // icon: enpowered,
+    // iconType: "custom",
+    iconType: "fa",
+    // iconStyle: { transform: "scale(2.25)" },
     title: "Data Analyst",
     company: "EnPowered",
     companyColor: "#f6cb2a",
+    // companyColor: "#fff",
     location: "Toronto, Ontario",
     timeRange: "May. 2022 - Aug. 2022",
     responsibilities: [
@@ -43,12 +48,15 @@ const Experiences = [
     link: "http://www.enpowered.com",
   },
   {
-    // icon: faLeaf,
-    icon: grobo,
-    iconType: "custom",
+    icon: faLeaf,
+    // icon: grobo,
+    iconType: "fa",
+    // iconType: "custom",
+    // iconStyle: { marginLeft: 2, marginBottom: 2 },
     title: "Mechanical Design Engineer",
     company: "Grobo",
     companyColor: "#a3cf5f",
+    // companyColor: "#fff",
     location: "Waterloo, Ontario",
     timeRange: "Sep. 2021 - Dec. 2021",
     responsibilities: [
@@ -59,6 +67,25 @@ const Experiences = [
       "Python, Selenium, Industrial Design, Injection Molding, SOLIDWORKS",
     link: "https://twitter.com/grobogrow",
   },
+  // {
+  //   // icon: faLeaf,
+  //   icon: uoft,
+  //   iconType: "custom",
+  //   iconStyle: { transform: "scale(2.5)" },
+  //   title: "Solid Rocket Designer",
+  //   company: "University of Toronto",
+  //   // companyColor: "#a3cf5f",
+  //   companyColor: "#fff",
+  //   location: "Waterloo, Ontario",
+  //   timeRange: "June. 2019 - Aug. 2020",
+  //   responsibilities: [
+  //     "Designed an affordable certification rocket with team members using OpenRocket, AutoCAD and SOLIDWORKS to make rocket handling certifications more affordable to team members.",
+  //     "Worked remotely with team members during the sourcing and fabrication process of a certification rocket, ultimately producing and launching a testable prototype.",
+  //   ],
+  //   skills:
+  //     "Rocket Design, Composites Manufacturing, AutoCAD, SOLIDWORKS, OpenRocket",
+  //   link: "https://twitter.com/grobogrow",
+  // },
 ];
 
 export default Experiences;
