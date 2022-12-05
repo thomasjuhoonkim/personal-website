@@ -6,8 +6,17 @@ const Projects = [
     description:
       "These projects are currently in the works! Check back again to see if they are done!",
     skills: "React Native, Golang, Docker",
-    skillsArray: ["React Native", "Golang", "Docker"],
+    skillsArray: ["Golang", "Docker"],
     link: "/",
+  },
+  {
+    img: images("./uber-clone.jpeg"),
+    title: "Uber Clone",
+    description:
+      "This app is a simple clone of the Uber app which mimics setting origin and destination, selecting ride tier, and route previews.",
+    skills: "React Native, Google Maps API",
+    skillsArray: ["All", "React Native"],
+    link: "https://github.com/thomasjuhoonkim/react-native-uber-clone",
   },
   {
     img: images("./react-3d-model-component.png"),
