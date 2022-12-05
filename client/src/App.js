@@ -16,10 +16,11 @@ import {
 import "./App.css";
 
 function App() {
-  // use this useEffect to migrate any app breaking changes
+  // // use this useEffect to migrate any app breaking changes
   // React.useEffect(() => {
   //   const storageTheme = localStorage.getItem("theme");
-  //   if (storageTheme === "light" || storageTheme === "dark")
+  //   console.log(storageTheme);
+  //   if (storageTheme === '"light"' || storageTheme === '"dark"')
   //     localStorage.removeItem("theme");
   // }, []);
 

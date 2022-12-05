@@ -1,15 +1,6 @@
 import React, { createContext, useState } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
 
-function isJsonString(str) {
-  try {
-    JSON.parse(str);
-  } catch (e) {
-    return false;
-  }
-  return true;
-}
-
 const setWithExpiry = (key, value, ttl) => {
   const now = new Date();
   const item = {
@@ -22,15 +13,20 @@ const setWithExpiry = (key, value, ttl) => {
 const getWithExpiry = (key) => {
   const itemStr = localStorage.getItem(key);
 
-  if (!itemStr) return "light";
-  if (!isJsonString(itemStr)) return "light";
+  if (!itemStr) {
+    return window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
+  }
 
   const item = JSON.parse(itemStr);
   const now = new Date();
 
   if (now.getTime() > item.expiry) {
     localStorage.removeItem(key);
-    return null;
+    return window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
   }
   return item.value;
 };
@@ -38,9 +34,11 @@ const getWithExpiry = (key) => {
 const DarkModeContext = createContext();
 
 function DarkModeProvider(props) {
+  const themeKey = "themeWithExpiry";
+
   const [theme, setTheme] = useState(
     getCookieConsentValue()
-      ? getWithExpiry("theme")
+      ? getWithExpiry(themeKey)
       : window.matchMedia("(prefers-color-scheme: light)").matches
       ? "light"
       : "dark"
@@ -49,7 +47,7 @@ function DarkModeProvider(props) {
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     if (getCookieConsentValue()) {
-      setWithExpiry("theme", newTheme, 1 * 60 * 60 * 1000);
+      setWithExpiry(themeKey, newTheme, 1 * 60 * 60 * 1000);
     }
     setTheme(newTheme);
   };
