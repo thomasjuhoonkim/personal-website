@@ -1,4 +1,4 @@
-import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
+// import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
 import uoft from "../../assets/company-logos/uoft.png";
 import grobo from "../../assets/company-logos/grobo.png";
 import enpowered from "../../assets/company-logos/enpowered.png";

@@ -17,15 +17,17 @@ const TimelineItem = (props) => {
         <a href={props.link}>
           {props.iconType === "fa" ? (
             <FontAwesomeIcon icon={props.icon} className="icon" />
-          ) : (
+          ) : props.iconType === "svg" ? (
             <object
               cursor="pointer"
               data={props.icon}
               alt="logo"
-              class="icon-custom"
+              class="icon-custom-svg"
             >
               logo
             </object>
+          ) : (
+            <img src={props.icon} alt="logo" className="icon-custom" />
           )}
         </a>
       </div>

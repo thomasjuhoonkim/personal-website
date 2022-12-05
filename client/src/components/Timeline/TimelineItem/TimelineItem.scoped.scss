@@ -24,6 +24,18 @@
       color: var(--font-color);
       transition: color 0.5s ease;
     }
+    .icon-custom {
+      width: 100%;
+      height: 100%;
+    }
+    .icon-custom-svg {
+      pointer-events: none;
+      z-index: -1;
+      transform: scale(2) translate(0, 0.5px);
+      filter: invert(0%) sepia(6%) saturate(1979%) hue-rotate(318deg) brightness(90%) contrast(75%);
+      transition: filter .5s ease;
+      user-select: none;
+    }
     &:hover {
       transform: scale(1.15);
       cursor: pointer;
