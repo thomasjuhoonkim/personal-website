@@ -1,6 +1,15 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
 
+function isJsonString(str) {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
+
 const setWithExpiry = (key, value, ttl) => {
   const now = new Date();
   const item = {
@@ -14,6 +23,7 @@ const getWithExpiry = (key) => {
   const itemStr = localStorage.getItem(key);
 
   if (!itemStr) return null;
+  if (!isJsonString(itemStr)) return null;
 
   const item = JSON.parse(itemStr);
   const now = new Date();
