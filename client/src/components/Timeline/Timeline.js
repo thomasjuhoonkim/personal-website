@@ -12,6 +12,7 @@ const Timeline = () => {
         <TimelineItem
           key={i}
           icon={experience.icon}
+          iconType={experience.iconType}
           title={experience.title}
           company={experience.company}
           companyColor={experience.companyColor}

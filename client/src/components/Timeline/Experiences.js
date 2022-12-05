@@ -1,8 +1,14 @@
 import { faLeaf, faBolt, faStar } from "@fortawesome/free-solid-svg-icons";
+import uoft from "../../assets/company-logos/uoft.png";
+import grobo from "../../assets/company-logos/grobo.png";
+import enpowered from "../../assets/company-logos/enpowered.png";
+import fourStar from "../../assets/company-logos/four-star.png";
 
 const Experiences = [
   {
-    icon: faStar,
+    // icon: faStar,
+    icon: fourStar,
+    iconType: "custom",
     title: "Software Developer",
     company: "Four Star",
     companyColor: "#ec3e3d",
@@ -12,14 +18,16 @@ const Experiences = [
       "Developed python scripts that automated repetitive excel based tasks such as parsing, formatting, and delivery route optimization",
       "Designed RESTful backend server enabling excel files to be parsed and returned as a formatted file",
       "Incorporated a MySQL database that updates customer information when requested using the most recent excel file",
-      "Developed a frontend using Next.js so that stakeholders can utilize automation scripts through a user interface."
+      "Developed a frontend using Next.js so that stakeholders can utilize automation scripts through a user interface.",
     ],
     skills:
       "React, Flask, Heroku, Python, Selenium, Google Maps API, Openpyxl, Excel",
     link: "/",
   },
   {
-    icon: faBolt,
+    // icon: faBolt,
+    icon: enpowered,
+    iconType: "custom",
     title: "Data Analyst",
     company: "EnPowered",
     companyColor: "#f6cb2a",
@@ -35,7 +43,9 @@ const Experiences = [
     link: "http://www.enpowered.com",
   },
   {
-    icon: faLeaf,
+    // icon: faLeaf,
+    icon: grobo,
+    iconType: "custom",
     title: "Mechanical Design Engineer",
     company: "Grobo",
     companyColor: "#a3cf5f",

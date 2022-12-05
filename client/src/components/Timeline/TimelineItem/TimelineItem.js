@@ -15,7 +15,18 @@ const TimelineItem = (props) => {
         style={{ background: props.companyColor }}
       >
         <a href={props.link}>
-          <FontAwesomeIcon icon={props.icon} className="icon" />
+          {props.iconType === "fa" ? (
+            <FontAwesomeIcon icon={props.icon} className="icon" />
+          ) : (
+            <object
+              cursor="pointer"
+              data={props.icon}
+              alt="logo"
+              class="icon-custom"
+            >
+              logo
+            </object>
+          )}
         </a>
       </div>
       <div className="card">
