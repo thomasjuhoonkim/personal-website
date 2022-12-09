@@ -6,8 +6,8 @@ name: Build and Deploy www client
   push:
     branches:
       - main
-    paths:
-      - www/client/**
+    # paths:
+    #   - www/client/**
 jobs:
   build:
     runs-on: ubuntu-latest
