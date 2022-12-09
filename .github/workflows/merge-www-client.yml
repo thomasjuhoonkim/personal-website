@@ -15,9 +15,9 @@ jobs:
       - name: Building from React
         uses: actions/checkout@v2
         run: |
-        cd www && cd client
-        npm install --legacy-peer-deps
-        npm run build
+          cd www && cd client
+          npm install --legacy-peer-deps
+          npm run build
   deploy:
     needs: build
     runs-on: ubuntu-latest
