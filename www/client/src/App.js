@@ -11,7 +11,7 @@ import {
   Portfolio,
   Contact,
   FourZeroFour,
-} from "./views/index";
+} from "./pages/index";
 
 import "./App.css";
 
