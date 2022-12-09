@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Building from React
-        uses: actions/checkout@v2
         run: |
           cd www && cd client
           npm install --legacy-peer-deps
