@@ -24,7 +24,7 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: client/build
+          name: Build Files
           path: client/build
 
   deploy:
@@ -37,7 +37,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: client/build
+          name: Build Files
           path: client/build
 
       - name: Deploying to Firebase
