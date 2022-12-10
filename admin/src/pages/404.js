@@ -10,7 +10,7 @@ const FourZeroFour = () => {
 
   return (
     <div className={styles.container}>
-      <DarkModeButton className="dark-mode-button" />
+      <DarkModeButton />
       <h1>Oops, Wrong Way...</h1>
       <h3>This isn't a valid page on this website. Try something else.</h3>
       <button onClick={() => navigate(-1)}>Go Back</button>

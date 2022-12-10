@@ -1,6 +1,6 @@
 # Personal Website
 
-![Homepage](www/client/src/assets/side-projects/personal-website.png)
+![Homepage](client/src/assets/side-projects/personal-website.png)
 
 ## [Check it out here!](https://www.thomasjuhoonkim.me)
 

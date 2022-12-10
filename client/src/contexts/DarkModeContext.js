@@ -31,7 +31,7 @@ const getWithExpiry = (key) => {
   return item.value;
 };
 
-const DarkModeContext = createContext();
+const DarkModeContext = createContext("light");
 
 function DarkModeProvider(props) {
   const themeKey = "themeWithExpiry";

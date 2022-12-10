@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import { DarkModeProvider } from "./contexts/DarkModeContext";
 
 import App from "./App";
+import { DarkModeProvider } from "./contexts/DarkModeContext";
+import { AuthenticationProvider } from "./contexts/AuthenticationContext";
 
 import "./index.css";
 
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <DarkModeProvider>
-      <App />
+      <AuthenticationProvider>
+        <App />
+      </AuthenticationProvider>
     </DarkModeProvider>
   </React.StrictMode>
 );
