@@ -20,7 +20,7 @@ const Login = () => {
 
   // redirect if already logged in through session
   // could probably move axios get to the context itself
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     Axios.get(process.env.REACT_APP_API_ENDPOINT + "/login")
       .then((response) => {
