@@ -27,13 +27,13 @@ const Login = () => {
         if (response.data.auth) {
           setIsLoggedIn(true);
           setLoginMessage("Already logged in, redirecting...");
-          setTimeout(() => navigate("/404"), 1000);
+          setTimeout(() => console.log("navigate to admin dashboard"), 1000);
         }
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [navigate, setIsLoggedIn]);
+  }, [setIsLoggedIn]);
 
   const login = (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ const Login = () => {
           setLoginMessage(response.data.message);
           setTimeout(() => {
             setIsLoggedIn(true);
-            navigate("404");
+            console.log("navigate to admin dashboard");
           }, 1000);
           return;
         }
