@@ -8,3 +8,7 @@
 # https://codepen.io/corenominal/pen/rxOmMJ
 
 # Don't gitignore .env
+
+# SSL
+api.thomasjuhoonkim.me.pem
+api.thomasjuhoonkim.me.key
