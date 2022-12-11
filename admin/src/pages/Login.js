@@ -16,14 +16,13 @@ const Login = () => {
   const [loginMessage, setLoginMessage] = useState("");
 
   // ===== Axios ======
-  const link = process.env.REACT_APP_API_ENDPOINT;
   Axios.defaults.withCredentials = true;
 
   // redirect if already logged in through session
   // could probably move axios get to the context itself
   const navigate = useNavigate();
   useEffect(() => {
-    Axios.get(link + "/login")
+    Axios.get(process.env.REACT_APP_API_ENDPOINT + "/login")
       .then((response) => {
         if (response.data.auth) {
           setIsLoggedIn(true);
@@ -48,7 +47,7 @@ const Login = () => {
     }
 
     setLoginPending(true);
-    Axios.post(link + "/login", {
+    Axios.post(process.env.REACT_APP_API_ENDPOINT + "/login", {
       username: username,
       password: password,
     })
