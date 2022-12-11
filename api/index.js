@@ -74,16 +74,27 @@ app.route("/").get((req, res) => {
 app.post("/register", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const registrationCode = req.body.registrationCode;
+
+  if (registrationCode !== process.env.REGISTRATION_CODE) {
+    res.status(422);
+    res.json({ registration: false, message: "Invald registration code." });
+    return;
+  }
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
     addUser(username, hash, (result) => {
       if (!result) {
         res.status(422);
-        res.send("Unable to register.");
+        res.json({
+          registration: false,
+          message: "Registration unsuccessful.",
+        });
         return;
       }
       res.status(201);
       res.json({
+        registration: true,
         message: "Successfully created user.",
         username: result.username,
       });
