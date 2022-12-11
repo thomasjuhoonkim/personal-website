@@ -18,7 +18,7 @@ jobs:
 
       - name: Building from React
         run: |
-          cd client
+          cd admin
           npm install --legacy-peer-deps
           npm run build
 
