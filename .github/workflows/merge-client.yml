@@ -6,8 +6,8 @@ name: Build and Deploy - Client
   push:
     branches:
       - main
-    paths:
-      - client/**
+    # paths:
+    #   - client/**
 
 jobs:
   build:
