@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import { DarkModeContext } from "./contexts/DarkModeContext";
-import { AuthenticationContext } from "./contexts/AuthenticationContext";
+// import { AuthenticationContext } from "./contexts/AuthenticationContext";
 
 import { Template } from "./components/index";
 import { Login, FourZeroFour } from "./pages/index";

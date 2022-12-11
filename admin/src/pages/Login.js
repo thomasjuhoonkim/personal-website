@@ -30,7 +30,7 @@ const Login = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [navigate, setIsLoggedIn]);
 
   // ===== Axios ======
   const link = "http://localhost:5000";
