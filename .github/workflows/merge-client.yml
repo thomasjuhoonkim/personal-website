@@ -16,10 +16,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('client/package-lock.json') }}
+          restore-keys: npm-
+
       - name: Building from React
         run: |
           cd client
-          npm install --legacy-peer-deps
+          npm ci --legacy-peer-deps
           npm run build
 
       - name: Archive Production Artifact
