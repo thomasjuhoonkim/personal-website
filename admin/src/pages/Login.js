@@ -38,11 +38,11 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     if (!username) {
-      setLoginMessage("Please enter a username.");
+      setLoginMessage("Username required.");
       return;
     }
     if (!password) {
-      setLoginMessage("Please enter a password.");
+      setLoginMessage("Password required.");
       return;
     }
 
@@ -100,7 +100,6 @@ const Login = () => {
             onChange={(e) => {
               setUsername(e.target.value);
             }}
-            required
           />
           <label>Password</label>
           <input
@@ -109,7 +108,6 @@ const Login = () => {
             onChange={(e) => {
               setPassword(e.target.value);
             }}
-            required
           />
           <input
             value="Login"
@@ -117,6 +115,9 @@ const Login = () => {
             style={{ background: loginPending ? "gray" : null }}
           />
         </form>
+        <a className={styles.register} href="/register">
+          Go to Register Page
+        </a>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
   background: var(--bg-color);
   transition: background .5s ease;
   .loginContainer {
-    transform: translateY(25%);
+    transform: translateY(20%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@
         }
       }
     }
-    .register {
+    .login {
       text-decoration: underline solid transparent;
       text-decoration-thickness: 2px;
       margin-top: 20px;

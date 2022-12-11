@@ -11,7 +11,7 @@ import { DarkModeContext } from "./contexts/DarkModeContext";
 // import { AuthenticationContext } from "./contexts/AuthenticationContext";
 
 import { Template } from "./components/index";
-import { Login, FourZeroFour } from "./pages/index";
+import { Login, Register, FourZeroFour } from "./pages/index";
 
 import "./App.css";
 
@@ -25,6 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/random"
