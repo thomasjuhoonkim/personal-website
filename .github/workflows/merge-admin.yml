@@ -6,8 +6,8 @@ name: Build and Deploy - Admin
   push:
     branches:
       - main
-    # paths:
-    #   - client/**
+    paths:
+      - admin/**
 
 jobs:
   build:
@@ -16,10 +16,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('admin/package-lock.json') }}
+          restore-keys: npm-
+
       - name: Building from React
         run: |
           cd admin
-          npm install --legacy-peer-deps
+          npm ci --legacy-peer-deps --ignore-scripts
           npm run build
 
       - name: Archive Production Artifact
