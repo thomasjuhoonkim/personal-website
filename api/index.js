@@ -28,6 +28,15 @@ const saltRounds = 10;
 import dotenv from "dotenv";
 dotenv.config();
 
+// path
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// favicon
+import favicon from "express-favicon";
+
 // ===== DB CONNECTION =====
 mongoose.set("strictQuery", true);
 mongoose.Promise = global.Promise;
@@ -38,6 +47,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // ===== MIDDLEWARE =====
 
+app.use(favicon(__dirname + "/assets/favicon.png"));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -56,6 +66,11 @@ app.use(
     saveUninitialized: true,
     cookie: {
       maxAge: 1 * 60 * 60 * 1000,
+      secure: true,
+      sameSite: true,
+      httpOnly: true,
+      signed: true,
+      overwrite: true,
     },
   })
 );
@@ -77,25 +92,29 @@ app.post("/register", (req, res) => {
   const registrationCode = req.body.registrationCode;
 
   if (registrationCode !== process.env.REGISTRATION_CODE) {
-    res.status(422);
     res.json({ registration: false, message: "Invald registration code." });
     return;
   }
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
-    addUser(username, hash, (result) => {
-      if (!result) {
-        res.status(422);
-        res.json({
-          registration: false,
-          message: "Registration unsuccessful.",
-        });
+    addUser(username, hash, (err, result) => {
+      if (err) {
+        if (err.code === 11000) {
+          res.json({
+            registration: false,
+            message: "Username already exists.",
+          });
+        } else {
+          res.json({
+            registration: false,
+            message: "Unknown error: please try again later.",
+          });
+        }
         return;
       }
-      res.status(201);
       res.json({
         registration: true,
-        message: "Successfully created user.",
+        message: "Successfully created user. Redirecting...",
         username: result.username,
       });
     });

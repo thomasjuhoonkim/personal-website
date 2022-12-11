@@ -8,10 +8,7 @@ export const addUser = async (username, password, callback) => {
     username: username,
     password: password,
   });
-  newUser.save((err, result) => {
-    if (err) console.error(err);
-    callback(result);
-  });
+  newUser.save((err, result) => callback(err, result));
 };
 
 export const getUserByUsername = async (username) => {
