@@ -41,7 +41,10 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: Build Files
-          path: client/build
+          path: |
+            client/build
+            client/.firebaserc
+            client/firebase.json
 
       - name: Deploying to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
