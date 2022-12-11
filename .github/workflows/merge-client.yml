@@ -26,14 +26,17 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Build Files
-          path: client/build
+          path: |
+            client/build
+            client/.firebasesrc
+            client/firebase.json
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      # - name: Checkout Repository
+      #   uses: actions/checkout@v2
 
       - name: Download Artifact
         uses: actions/download-artifact@master
@@ -44,7 +47,7 @@ jobs:
       - name: Deploying to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entrypoint: ./client
+          entrypoint: ./client/build
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_THOMASJUHOONKIM_1010 }}"
           channelId: live
