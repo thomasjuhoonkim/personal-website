@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import DarkModeButton from "../components/NavBar/DarkModeButton/DarkModeButton";
 import { AuthenticationContext } from "../contexts/AuthenticationContext";
@@ -10,15 +11,33 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthenticationContext);
+  const { setIsLoggedIn } = useContext(AuthenticationContext);
   const [loginPending, setLoginPending] = useState(false);
   const [loginMessage, setLoginMessage] = useState("");
+
+  // redirect if already logged in through session
+  // could probably move axios get to the context itself
+  const navigate = useNavigate();
+  useEffect(() => {
+    Axios.get(link + "/login")
+      .then((response) => {
+        if (response.data.auth) {
+          setIsLoggedIn(true);
+          setLoginMessage("Already logged in, redirecting...");
+          setTimeout(() => navigate("/404"), 1000);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   // ===== Axios ======
   const link = "http://localhost:5000";
   Axios.defaults.withCredentials = true;
 
-  const login = () => {
+  const login = (e) => {
+    e.preventDefault();
     if (!username) {
       setLoginMessage("Please enter a username.");
       return;
@@ -35,14 +54,18 @@ const Login = () => {
     })
       .then((response) => {
         // successful authentication
-        if (response.data.auth) {
+        if (response.data.auth === true) {
           setLoginPending(false);
-          setLoginMessage("Successfully logged in, redirecting...");
-          setTimeout(() => setIsLoggedIn(true), 1000);
+          localStorage.setItem("token", response.data.token);
+          setLoginMessage(response.data.message);
+          setTimeout(() => {
+            setIsLoggedIn(true);
+            navigate("404");
+          }, 1000);
           return;
         }
         // unsuccessful authentication
-        setLoginMessage("Incorrect username or password.");
+        setLoginMessage(response.data.message);
         setLoginPending(false);
         setIsLoggedIn(false);
       })
@@ -60,12 +83,12 @@ const Login = () => {
       <div className={styles.loginContainer}>
         <DarkModeButton />
         <h1>Login</h1>
-        <div className={styles.formContainer}>
+        <form className={styles.formContainer} onSubmit={login}>
           {loginMessage && (
             <p
               className={styles.loginMessage}
               style={{
-                color: loginMessage.includes("Success") ? "green" : "red",
+                color: loginMessage.includes("logged in") ? "green" : "red",
               }}
             >
               {loginMessage}
@@ -89,13 +112,12 @@ const Login = () => {
             }}
             required
           />
-        </div>
-        <button
-          style={{ background: loginPending ? "gray" : null }}
-          onClick={login}
-        >
-          Login
-        </button>
+          <input
+            value="Login"
+            type="submit"
+            style={{ background: loginPending ? "gray" : null }}
+          />
+        </form>
       </div>
     </div>
   );

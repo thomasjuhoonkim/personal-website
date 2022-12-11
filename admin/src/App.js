@@ -1,5 +1,11 @@
 import React, { useContext } from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 
 import { DarkModeContext } from "./contexts/DarkModeContext";
 import { AuthenticationContext } from "./contexts/AuthenticationContext";
@@ -14,16 +20,14 @@ function App() {
   const { theme } = useContext(DarkModeContext);
   document.querySelector("html").setAttribute("data-theme", theme);
 
-  // redirect user if already logged in
-  const { isLoggedIn } = useContext(AuthenticationContext);
-
   // ===== Content =====
   return (
     <BrowserRouter>
       <Routes>
-        {isLoggedIn ? null : <Route path="/" element={<Login />} />}
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
         <Route
-          path="/"
+          path="/random"
           element={
             <Template>
               <Outlet />

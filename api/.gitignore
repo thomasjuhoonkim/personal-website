@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+
+# will be keeping my api key exposed as more authentication
+# is required to retrieve information from api
+
+# RFC4122 version 4 compliant UUID is used for API key
+# https://codepen.io/corenominal/pen/rxOmMJ
+
+# Don't gitignore .env
