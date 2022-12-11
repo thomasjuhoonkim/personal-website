@@ -15,6 +15,10 @@ const Login = () => {
   const [loginPending, setLoginPending] = useState(false);
   const [loginMessage, setLoginMessage] = useState("");
 
+  // ===== Axios ======
+  const link = process.env.REACT_APP_API_ENDPOINT;
+  Axios.defaults.withCredentials = true;
+
   // redirect if already logged in through session
   // could probably move axios get to the context itself
   const navigate = useNavigate();
@@ -31,10 +35,6 @@ const Login = () => {
         console.error(error);
       });
   }, [navigate, setIsLoggedIn]);
-
-  // ===== Axios ======
-  const link = "http://localhost:5000";
-  Axios.defaults.withCredentials = true;
 
   const login = (e) => {
     e.preventDefault();
