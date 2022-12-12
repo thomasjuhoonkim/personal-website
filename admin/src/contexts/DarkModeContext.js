@@ -44,11 +44,9 @@ function DarkModeProvider(props) {
   };
 
   return (
-    <>
-      <DarkModeContext.Provider value={{ theme, switchTheme }}>
-        {props.children}
-      </DarkModeContext.Provider>
-    </>
+    <DarkModeContext.Provider value={{ theme, switchTheme }}>
+      {props.children}
+    </DarkModeContext.Provider>
   );
 }
 

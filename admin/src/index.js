@@ -3,10 +3,16 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
 import App from "./App";
+
+import Axios from "axios";
+
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import { AuthenticationProvider } from "./contexts/AuthenticationContext";
 
 import "./index.css";
+
+// ===== CONTENT =====
+Axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

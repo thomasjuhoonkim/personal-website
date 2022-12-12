@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import DarkModeButton from "../components/NavBar/DarkModeButton/DarkModeButton";
+import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
 
 import styles from "./Register.module.scss";
 

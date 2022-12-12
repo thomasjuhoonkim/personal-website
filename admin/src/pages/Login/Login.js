@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-import DarkModeButton from "../components/NavBar/DarkModeButton/DarkModeButton";
-import { AuthenticationContext } from "../contexts/AuthenticationContext";
+import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
+import { AuthenticationContext } from "../../contexts/AuthenticationContext";
 
 import styles from "./Login.module.scss";
 
@@ -11,29 +11,18 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setIsLoggedIn } = useContext(AuthenticationContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthenticationContext);
   const [loginPending, setLoginPending] = useState(false);
   const [loginMessage, setLoginMessage] = useState("");
 
-  // ===== Axios ======
-  Axios.defaults.withCredentials = true;
-
   // redirect if already logged in through session
-  // could probably move axios get to the context itself
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
-    Axios.get(process.env.REACT_APP_API_ENDPOINT + "/login")
-      .then((response) => {
-        if (response.data.auth) {
-          setIsLoggedIn(true);
-          setLoginMessage("Already logged in, redirecting...");
-          setTimeout(() => console.log("navigate to admin dashboard"), 1000);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [setIsLoggedIn]);
+    if (isLoggedIn === true) {
+      setLoginMessage("Already logged in, redirecting...");
+      setTimeout(() => navigate("/dashboard", { replace: true }), 3000);
+    }
+  }, [isLoggedIn, navigate]);
 
   const login = (e) => {
     e.preventDefault();
@@ -59,7 +48,7 @@ const Login = () => {
           setLoginMessage(response.data.message);
           setTimeout(() => {
             setIsLoggedIn(true);
-            console.log("navigate to admin dashboard");
+            navigate("/dashboard", { replace: true });
           }, 1000);
           return;
         }

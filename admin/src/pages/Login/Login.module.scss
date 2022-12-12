@@ -3,8 +3,11 @@
   height: 100vh;
   background: var(--bg-color);
   transition: background .5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .loginContainer {
-    transform: translateY(20%);
+    transform: translateY(-10%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +71,7 @@
         }
       }
     }
-    .login {
+    .register {
       text-decoration: underline solid transparent;
       text-decoration-thickness: 2px;
       margin-top: 20px;

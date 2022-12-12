@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { DarkModeContext } from "./contexts/DarkModeContext";
-// import { AuthenticationContext } from "./contexts/AuthenticationContext";
+import { AuthenticationContext } from "./contexts/AuthenticationContext";
 
-import { Template } from "./components/index";
-import { Login, Register, FourZeroFour } from "./pages/index";
+import { Template, ProtectedRoute } from "./components/index";
+import {
+  Login,
+  Register,
+  FourZeroFour,
+  Dashboard,
+  Loading,
+} from "./pages/index";
 
 import "./App.css";
 
@@ -24,21 +24,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate replace to="/login" />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/random"
-          element={
-            <Template>
-              <Outlet />
-            </Template>
-          }
-        >
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} /> */}
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Template />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
         </Route>
         <Route path="*" element={<FourZeroFour />} />
       </Routes>
