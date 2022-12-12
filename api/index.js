@@ -4,7 +4,14 @@
 import express from "express";
 const app = express();
 const port = process.env.PORT || 5000;
-const link = "https://admin.thomasjuhoonkim.me";
+const serverLink =
+  process.env.NODE_ENV === "development"
+    ? `http://localhost:${port}`
+    : `https://api.thomasjuhoonkim.me:${port}`;
+const clientLink =
+  process.env.NODE_ENV === "development"
+    ? `http://localhost:3001`
+    : "https://admin.thomasjuhoonkim.me";
 
 // http
 import cors from "cors";
@@ -52,7 +59,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: [link, "http://localhost:3001"],
+    origin: clientLink,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
@@ -169,5 +176,5 @@ app.post("/login", (req, res) => {
 // ===== APP =====
 
 app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
+  console.log(`Server listening on ${serverLink}`);
 });
