@@ -81,7 +81,7 @@ app.use(
     },
   })
 );
-app.all("/.*", function (req, res, next) {
+app.all("*", function (req, res, next) {
   const host = req.header("host");
   if (host.match(/.*herokuapp\..*/)) {
     res.redirect(301, "https://api.thomasjuhoonkim.me" + req.originalUrl);
