@@ -2,16 +2,9 @@ import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { DarkModeContext } from "./contexts/DarkModeContext";
-import { AuthenticationContext } from "./contexts/AuthenticationContext";
 
 import { Template, ProtectedRoute } from "./components/index";
-import {
-  Login,
-  Register,
-  FourZeroFour,
-  Dashboard,
-  Loading,
-} from "./pages/index";
+import { Login, Register, FourZeroFour, Dashboard } from "./pages/index";
 
 import "./App.css";
 
