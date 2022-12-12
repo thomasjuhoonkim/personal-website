@@ -125,7 +125,9 @@ app.post("/register", (req, res) => {
 app.get("/login", (req, res) => {
   if (req.session.user) {
     res.json({ auth: true, username: req.session.user.username });
+    return;
   }
+  res.json({ auth: false });
 });
 app.post("/login", (req, res) => {
   const username = req.body.username;
@@ -137,7 +139,7 @@ app.post("/login", (req, res) => {
     }
     bcrypt.compare(password, result.password, (err, matches) => {
       if (matches === true) {
-        // add
+        // add session to cookies
         req.session.user = { username: result.username };
 
         // json web token
