@@ -1,8 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import Axios from "axios";
 
-import { Loading } from "../pages";
-
 const AuthenticationContext = createContext();
 
 const AuthenticationProvider = ({ children }) => {
@@ -17,7 +15,8 @@ const AuthenticationProvider = ({ children }) => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  if (isLoading) return <Loading />;
+  // enable is needed
+  // if (isLoading) return null;
 
   return (
     <AuthenticationContext.Provider
