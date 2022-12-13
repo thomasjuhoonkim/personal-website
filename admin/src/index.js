@@ -8,6 +8,7 @@ import Axios from "axios";
 
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import { AuthenticationProvider } from "./contexts/AuthenticationContext";
+import { LoadingProvider } from "./contexts/LoadingContext";
 
 import "./index.css";
 
@@ -17,11 +18,13 @@ Axios.defaults.withCredentials = true;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DarkModeProvider>
-      <AuthenticationProvider>
-        <App />
-      </AuthenticationProvider>
-    </DarkModeProvider>
+    <LoadingProvider>
+      <DarkModeProvider>
+        <AuthenticationProvider>
+          <App />
+        </AuthenticationProvider>
+      </DarkModeProvider>
+    </LoadingProvider>
   </React.StrictMode>
 );
 
