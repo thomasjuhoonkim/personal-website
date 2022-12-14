@@ -24,6 +24,7 @@ const Login = () => {
     }
   }, [isLoggedIn, navigate]);
 
+  // consider handling this at the context level
   const login = (e) => {
     e.preventDefault();
     if (!username) {

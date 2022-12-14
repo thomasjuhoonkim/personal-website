@@ -8,10 +8,8 @@ const LoadingProvider = ({ children }) => {
   const handleLoadingComplete = () => setIsLoading(false);
 
   useEffect(() => {
-    window.addEventListener("load", handleLoadingComplete);
-    // self assigning object allows resetting of data attribute
-    // eslint-disable-next-line no-self-assign
-    window.data = window.data;
+    if (document.readyState === "complete") handleLoadingComplete();
+    else window.addEventListener("load", handleLoadingComplete);
     return () => window.removeEventListener("load", handleLoadingComplete);
   }, []);
 
