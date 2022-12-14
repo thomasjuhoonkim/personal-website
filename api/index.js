@@ -72,7 +72,8 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      maxAge: 1 * 60 * 60 * 1000,
+      // maxAge: 1 * 60 * 60 * 1000,
+      maxAge: 5 * 1000,
       secure: true,
       sameSite: true,
       httpOnly: true,
@@ -94,7 +95,12 @@ app.use((req, res, next) => {
 
 // ===== CONTROLLERS =====
 
-import { addUser, getUserByUsername } from "./controllers/userController.js";
+import {
+  addUser,
+  userExists,
+  getUserById,
+  getUserByUsername,
+} from "./controllers/userController.js";
 
 // ===== ENDPOINTS =====
 
@@ -141,10 +147,11 @@ app.post("/register", (req, res) => {
 // ROUTE "/login" - GET, POST
 app.get("/login", (req, res) => {
   if (req.session.user) {
-    res.json({ auth: true, username: req.session.user.username });
-    return;
-  }
-  res.json({ auth: false });
+    userExists({ _id: req.session.user.id }).then((result) => {
+      if (result) res.json({ auth: true, username: req.session.user.username });
+      else res.json({ auth: false });
+    });
+  } else res.json({ auth: false });
 });
 app.post("/login", (req, res) => {
   const username = req.body.username;
@@ -157,7 +164,7 @@ app.post("/login", (req, res) => {
     bcrypt.compare(password, result.password, (err, matches) => {
       if (matches === true) {
         // add session to cookies
-        req.session.user = { username: result.username };
+        req.session.user = { id: result._id, username: result.username };
 
         // json web token
         const token = jwt.sign(
