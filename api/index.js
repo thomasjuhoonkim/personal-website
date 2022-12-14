@@ -77,7 +77,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     maxAge: 1 * 60 * 60 * 1000,
-    secure: process.env.NODE_ENV !== "development",
+    secure: process.env.NODE_ENV === "development" ? false : true,
     sameSite: true,
     httpOnly: true,
     signed: true,
