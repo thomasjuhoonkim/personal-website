@@ -145,13 +145,18 @@ app.post("/register", (req, res) => {
 
 // ROUTE "/login" - GET, POST
 app.get("/login", (req, res) => {
-  if (!req.session.user) {
+  if (!req.session) {
     res.json({ auth: false });
     return;
   }
   userExists({ _id: req.session.user.id }).then((result) => {
-    if (result) res.json({ auth: true, username: req.session.user.username });
-    else res.json({ auth: false });
+    if (result) {
+      req.session.now = Date.now();
+      res.json({ auth: true, username: req.session.user.username });
+    } else {
+      req.session = null;
+      res.json({ auth: false });
+    }
   });
 });
 app.post("/login", (req, res) => {
@@ -166,6 +171,7 @@ app.post("/login", (req, res) => {
       if (matches === true) {
         // add session to cookies
         req.session.user = { id: result._id, username: result.username };
+        req.session.now = Date.now();
 
         // json web token
         const token = jwt.sign(
