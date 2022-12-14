@@ -42,7 +42,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // favicon
-import favicon from "express-favicon";
+import favicon from "serve-favicon";
 
 // ===== DB CONNECTION =====
 mongoose.set("strictQuery", true);
@@ -54,7 +54,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // ===== MIDDLEWARE =====
 
-app.use(favicon(__dirname + "/assets/favicon.png"));
+app.use(favicon(path.join(__dirname, "/assets/favicon.png")));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
