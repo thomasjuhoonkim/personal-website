@@ -64,11 +64,8 @@ app.use(
     credentials: true,
   })
 );
-// express trust proxy so that cookies work on development
-// app.set("trust proxy", (ip) => {
-//   if (process.env.NODE_ENV === "development" && ip === "::1") return true;
-//   return false;
-// });
+// express trust proxy setting for heroku
+app.set("trust proxy", 1);
 app.use(cookieParser());
 app.use(
   cookieSession({
@@ -77,7 +74,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     maxAge: 1 * 60 * 60 * 1000,
-    // secure: process.env.NODE_ENV === "development" ? false : true,
+    secure: process.env.NODE_ENV === "production",
     sameSite: true,
     httpOnly: true,
     signed: true,
