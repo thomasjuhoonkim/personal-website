@@ -64,6 +64,11 @@ app.use(
     credentials: true,
   })
 );
+// express trust proxy so that cookies work on development
+// app.set("trust proxy", (ip) => {
+//   if (process.env.NODE_ENV === "development" && ip === "::1") return true;
+//   return false;
+// });
 app.use(cookieParser());
 app.use(
   cookieSession({
@@ -71,15 +76,12 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      // maxAge: 1 * 60 * 60 * 1000,
-      maxAge: 5 * 1000,
-      secure: true,
-      sameSite: true,
-      httpOnly: true,
-      signed: true,
-      overwrite: true,
-    },
+    maxAge: 1 * 60 * 60 * 1000,
+    secure: process.env.NODE_ENV !== "development",
+    sameSite: true,
+    httpOnly: true,
+    signed: true,
+    overwrite: true,
   })
 );
 // monitor wildcard for performance? this isn't strictly necessary
@@ -146,12 +148,14 @@ app.post("/register", (req, res) => {
 
 // ROUTE "/login" - GET, POST
 app.get("/login", (req, res) => {
-  if (req.session.user) {
-    userExists({ _id: req.session.user.id }).then((result) => {
-      if (result) res.json({ auth: true, username: req.session.user.username });
-      else res.json({ auth: false });
-    });
-  } else res.json({ auth: false });
+  if (!req.session.user) {
+    res.json({ auth: false });
+    return;
+  }
+  userExists({ _id: req.session.user.id }).then((result) => {
+    if (result) res.json({ auth: true, username: req.session.user.username });
+    else res.json({ auth: false });
+  });
 });
 app.post("/login", (req, res) => {
   const username = req.body.username;
