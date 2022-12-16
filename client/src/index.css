@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Fraunces:400,700');
 
 :root {
-  --primary-color: #b8e3ff;
-  --secondary-color: #0583d2;
+  --primary-color: #0583d2;
+  --secondary-color: #b8e3ff;
   --white: #f2f2f2;
   --black: #202020;
   --font-color: #202020;
@@ -16,5 +16,7 @@
 [data-theme='dark'] {
   --font-color: #f2f2f2;
   --bg-color: #202020;
+  --primary-color: #b8e3ff;
+  --secondary-color: #0583d2;
   transition: all .5s ease;
 }

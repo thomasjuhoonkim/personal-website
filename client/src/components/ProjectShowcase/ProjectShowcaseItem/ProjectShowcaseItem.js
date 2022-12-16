@@ -31,9 +31,11 @@ const ProjectShowcaseItem = (props) => {
   return (
     <motion.div
       layout
+      key={props.title}
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
+      transition={{ ease: "easeInOut", duration: 0.33 }}
     >
       <div className="project-showcase-item-container">
         <a href={props.link} target="_blank" rel="noreferrer">

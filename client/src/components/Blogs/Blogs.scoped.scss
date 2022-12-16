@@ -1,0 +1,12 @@
+.blogs-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 4rem;
+}
+
+@media screen and (max-width: 800px) {
+  .blogs-list-container {
+    margin: 0 0.5rem;
+  }
+}

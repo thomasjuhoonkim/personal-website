@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { DarkModeContext } from "../../contexts/DarkModeContext";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -7,11 +7,10 @@ import Footer from "../Footer/Footer";
 import "./Template.scoped.scss";
 
 const Template = (props) => {
-  const { theme } = useContext(DarkModeContext);
   return (
-    <div className="app" data-theme={theme}>
+    <div className="app">
       <NavBar />
-      {props.children}
+      <Outlet />
       <Footer />
     </div>
   );

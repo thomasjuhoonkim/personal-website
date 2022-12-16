@@ -1,8 +1,8 @@
 import React from "react";
 
-import loading from "../assets/loading.svg";
-import me from "../assets/me.jpg";
-import "./Home.scoped.scss";
+import yes from "../../assets/yes.png";
+import loading from "../../assets/loading.svg";
+import "./Contact.scoped.scss";
 
 const AsyncImage = (props) => {
   const [loadedSrc, setLoadedSrc] = React.useState(null);
@@ -26,14 +26,21 @@ const AsyncImage = (props) => {
   );
 };
 
-const Home = () => {
+const Contact = () => {
   return (
-    <div className="home-container">
-      <h1>Thomas Kim</h1>
-      <h2>Software Developer Based in Toronto</h2>
-      <AsyncImage className="me" src={me} alt="Me" title="Hi" />
+    <div className="contact-container">
+      <AsyncImage
+        src={yes}
+        alt="Le Train"
+        title="choo choo"
+        className="contact-image"
+      />
+      <h1>Get in touch</h1>
+      <a href="mailto:thomasjuhoonkim@gmail.com">thomasjuhoonkim@gmail.com</a>
+      <a href="mailto:t84kim@uwaterloo.ca">t84kim@uwaterloo.ca</a>
+      <a href="tel:647-858-2456">647-858-2456</a>
     </div>
   );
 };
 
-export default Home;
+export default Contact;

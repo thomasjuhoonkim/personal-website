@@ -1,6 +1,7 @@
 .app {
   padding: 2.5rem 15vw;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
+  transition: background .5s ease;
 }
 
 @media only screen and (max-width: 800px) {

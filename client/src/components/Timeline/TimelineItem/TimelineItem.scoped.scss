@@ -34,8 +34,9 @@
       pointer-events: none;
       z-index: -1;
       transform: scale(2) translate(0, 0.5px);
-      filter: invert(0%) sepia(6%) saturate(1979%) hue-rotate(318deg) brightness(90%) contrast(75%);
-      transition: filter .5s ease;
+      filter: invert(0%) sepia(6%) saturate(1979%) hue-rotate(318deg)
+        brightness(90%) contrast(75%);
+      transition: filter 0.5s ease;
       user-select: none;
     }
     &:hover {
@@ -83,10 +84,10 @@
         margin-top: -3px;
       }
       li {
-        font-size: 12px;
+        font-size: 13px;
       }
       p {
-        font-size: 12px;
+        font-size: 13px;
       }
     }
     .icon-container {

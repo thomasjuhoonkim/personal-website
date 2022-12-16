@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./About.scoped.scss";
-import loading from "../assets/loading.svg";
-import pls from "../assets/pls.jpg";
+import loading from "../../assets/loading.svg";
+import pls from "../../assets/pls.jpg";
 
 const AsyncImage = (props) => {
   const [loadedSrc, setLoadedSrc] = React.useState(null);

@@ -8,17 +8,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 li {
-  padding: 0 1rem;
   list-style: none;
   a {
     font-size: 16px;
     text-decoration: none;
     color: var(--font-color);
     position: relative;
-    transition: color .5s ease;
+    transition: color 0.5s ease;
     &::after {
       content: "";
       position: absolute;
@@ -28,12 +28,12 @@ li {
       height: 0.2rem;
       background-color: var(--primary-color);
       opacity: 0;
-      transition: opacity .3s, transform .3s;
+      transition: opacity 0.3s, transform 0.3s;
     }
   }
   a:hover {
     text-shadow: 0 0 0.5px var(--shadow-color);
-    transition: text-shadow .5s ease;
+    transition: text-shadow 0.5s ease;
     &::after {
       opacity: 1;
       transform: translateY(0.5em);

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { DarkModeContext } from "./contexts/DarkModeContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
+
+import { DarkModeContext } from "./contexts/DarkModeContext";
 
 import { Template } from "./components/index";
 import {
@@ -10,36 +11,25 @@ import {
   Experience,
   Portfolio,
   Contact,
+  Blog,
+  BlogPost,
   FourZeroFour,
 } from "./pages/index";
 
 import "./App.css";
 
 function App() {
-  // // use this useEffect to migrate any app breaking changes
-  // React.useEffect(() => {
-  //   const storageTheme = localStorage.getItem("theme");
-  //   console.log(storageTheme);
-  //   if (storageTheme === '"light"' || storageTheme === '"dark"')
-  //     localStorage.removeItem("theme");
-  // }, []);
-
   const { theme } = useContext(DarkModeContext);
   document.querySelector("html").setAttribute("data-theme", theme);
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Template>
-              <Outlet />
-            </Template>
-          }
-        >
+        <Route element={<Template />}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:blogId" element={<BlogPost />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Route>

@@ -1,9 +1,11 @@
 .experiences-container {
   margin: 2.5rem 0;
   .experiences-title {
+    text-align: center;
     color: var(--font-color);
     font-size: 36px;
     transition: color 0.5s ease;
+    margin-bottom: 14px;
   }
 }
 
@@ -41,10 +43,31 @@
   text-align: center;
 }
 
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: -30px;
+  border: none;
+  border-radius: 17.5px;
+  height: 35px;
+  width: 130px;
+  background: var(--font-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 12px;
+  transition: transform 0.1s ease, color 0.5s ease, background .5s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .experiences-container {
     .experiences-title {
       font-size: 26px;
+      margin-bottom: 22px;
     }
   }
   .download-container {

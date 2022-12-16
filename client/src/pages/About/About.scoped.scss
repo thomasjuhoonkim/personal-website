@@ -30,7 +30,8 @@
     color: #ec3e3d;
   }
   .portfolio-link {
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: color 0.5s ease;
   }
   button {
     display: none;
@@ -62,7 +63,7 @@
       font-size: 25px;
     }
     p {
-      font-size: 11px;
+      font-size: 14px;
     }
     .about-image {
       margin-top: 1rem;

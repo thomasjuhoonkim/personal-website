@@ -1,0 +1,113 @@
+.blog-list-element-container {
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .blog-text-container {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85%;
+    .blog-title {
+      color: var(--font-color);
+      transition: color 0.5s ease;
+      font-size: 22px;
+      line-height: 26px;
+      margin-top: 4px;
+      margin-bottom: -8px;
+      cursor: pointer;
+      width: 95%;
+    }
+    .blog-preview {
+      color: var(--font-color);
+      transition: color 0.5s ease;
+      display: -webkit-box !important;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      cursor: pointer;
+      width: 95%;
+      margin-top: 13px;
+    }
+    .blog-attr-container {
+      margin-top: -3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .blog-tag {
+        background: var(--font-color);
+        transition: background 0.5s ease, color 0.5s ease;
+        color: var(--bg-color);
+        font-size: 13px;
+        padding: 2px 12px;
+        border-radius: 100vh;
+        cursor: pointer;
+      }
+      .blog-attr-spacing {
+        color: var(--font-color);
+        transition: color 0.5s ease;
+        user-select: none;
+      }
+      .blog-date {
+        color: var(--font-color);
+        transition: color 0.5s ease;
+        font-size: 14px;
+        cursor: pointer;
+        white-space: nowrap;
+        width: fit-content;
+      }
+    }
+  }
+  .thumbnail {
+    height: 77.5%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15%;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blog-list-element-container {
+    height: 120px;
+    .blog-text-container {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .blog-title {
+        line-height: 22px;
+        font-size: 16px;
+        margin-top: 0;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      .blog-preview {
+        display: none !important;
+        // -webkit-line-clamp: 1;
+        // font-size: 11px;
+        // width: 95%;
+      }
+      .blog-attr-container {
+        gap: 4px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        .blog-tag {
+          padding: 1px 10px;
+          font-size: 11px;
+          &:nth-of-type(1n + 2) {
+            display: none;
+          }
+        }
+        .blog-attr-spacing {
+          font-size: 13px;
+        }
+        .blog-date {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

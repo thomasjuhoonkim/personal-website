@@ -10,10 +10,6 @@ import "./ProjectShowcase.scoped.scss";
 const ProjectShowcase = () => {
   const [filter, setFilter] = useState("All");
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   // const getProjects = () => {
   //   return Projects.map((project, i) => {
   //     const projectComponent = (
@@ -60,7 +56,6 @@ const ProjectShowcase = () => {
       <div className="project-showcase-container">
         <AnimatePresence>{getProjects()}</AnimatePresence>
       </div>
-      <button onClick={scrollToTop}>Back to the Top</button>
     </>
   );
 };

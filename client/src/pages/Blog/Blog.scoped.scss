@@ -1,0 +1,37 @@
+.blog-container {
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--font-color);
+    transition: color .5s ease;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    border: none;
+    border-radius: 17.5px;
+    height: 35px;
+    width: 130px;
+    background: var(--font-color);
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: 12px;
+    transition: transform 0.1s ease, color 0.5s ease, background .5s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blog-container {
+    h1 {
+      margin-top: 12px;
+      margin-bottom: 18px;
+      font-size: 32px;
+    }
+  }
+}

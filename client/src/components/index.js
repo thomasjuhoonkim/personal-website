@@ -6,3 +6,5 @@ export {
 export { default as ProjectShowcase } from "./ProjectShowcase/ProjectShowcase";
 export { default as Template } from "./Template/Template";
 export { default as Timeline } from "./Timeline/Timeline";
+export { default as Blogs } from "./Blogs/Blogs";
+export { default as Markdown } from "./Markdown/Markdown";
