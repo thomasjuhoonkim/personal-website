@@ -8,10 +8,14 @@ const serverLink =
   process.env.NODE_ENV === "development"
     ? `http://localhost:${port}`
     : `https://api.thomasjuhoonkim.me:${port}`;
+const adminLink =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3001"
+    : "https://admin.thomasjuhoonkim.me";
 const clientLink =
   process.env.NODE_ENV === "development"
-    ? `http://localhost:3001`
-    : "https://admin.thomasjuhoonkim.me";
+    ? "http://localhost:3000"
+    : "https://www.thomasjuhoonkim.me";
 
 // http
 import cors from "cors";
@@ -52,6 +56,14 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
+// ===== AUTHENTICATION MIDDLEWARE FUNCTIONS =====
+
+const authenticateKey = (req, res, next) => {
+  const apiKey = req.header("x-api-key");
+  if (apiKey === process.env.API_KEY) next();
+  else res.status(403).send("Invalid API Key");
+};
+
 // ===== MIDDLEWARE =====
 
 app.use(favicon(path.join(__dirname, "/assets/favicon.png")));
@@ -59,7 +71,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: clientLink,
+    origin: [clientLink, adminLink],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
@@ -87,10 +99,9 @@ app.use((req, res, next) => {
   const host = req.header("host");
   if (host.match(/.*herokuapp\..*/)) {
     res.redirect(301, "https://api.thomasjuhoonkim.me" + req.originalUrl);
-  } else {
-    next();
-  }
+  } else next();
 });
+app.use(authenticateKey);
 
 // ===== CONTROLLERS =====
 
@@ -145,7 +156,7 @@ app.post("/register", (req, res) => {
 
 // ROUTE "/login" - GET, POST
 app.get("/login", (req, res) => {
-  if (!req.session) {
+  if (!req.session.user) {
     res.json({ auth: false });
     return;
   }
@@ -195,6 +206,121 @@ app.post("/login", (req, res) => {
       });
     });
   });
+});
+
+// ROUTE "/blogs" - GET
+app.get("/blogs", (req, res) => {
+  const data = [
+    {
+      blogId: "hello",
+      title: "I'm fucking depressed and I blah blah blah",
+      subtitle:
+        "What does the fox say when he's fucking depressed and hungry at the same time?",
+      route: "/blog/hello",
+      preview: `I'm fucking stupid and Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Integer rhoncus mattis lectus, vel volutpat magna
+      posuere vitae. Duis non sem sed enim placerat malesuada. Vestibulum
+      sapien lorem, sollicitudin at velit ac, pharetra commodo urna. Duis
+      commodo ullamcorper urna ultricies consequat. Nullam id cursus nunc.
+      Vestibulum metus lacus, ornare eget imperdiet ut, commodo fringilla
+      nisi. Cras pellentesque, magna in consequat interdum, purus mi
+      volutpat dui, et aliquam tortor ipsum sit amet tellus. Curabitur
+      fermentum porta aliquet. Donec congue, dui non venenatis pellentesque,
+      mauris nisl sollicitudin eros, non commodo enim est a augue. Vivamus
+      placerat, elit et ultrices rhoncus, nisi risus sagittis lorem, at
+      sodales lectus risus id nulla. Praesent ullamcorper, ipsum ac
+      vestibulum pulvinar, odio lacus gravida elit, eget malesuada erat
+      velit eu ipsum. Vivamus auctor metus tincidunt odio sodales, in
+      vestibulum nibh euismod.`,
+      markdown: `## hello
+A paragraph with *emphasis* and **strong importance**.
+
+> A block quote with ~~strikethrough~~ and a URL: https://reactjs.org.
+
+* Lists
+* [ ] todo
+* [x] done
+
+A table:
+| a | b | 1 |
+|:--|:--|:--|
+| c | d | 2 |
+| e | f | 3 |
+| g | h | 4 |
+| g | h | 4 |
+| g | h | 4 |
+| g | h | 4 |
+
+~~~js
+import Markdown from '../../components/Markdown/Markdown';
+console.log("hello world!");
+~~~
+`,
+      date: "Dec 14, 2022",
+      tags: ["React", "Depression", "Murder"],
+    },
+  ];
+  res.json(data);
+});
+
+// DYNAMIC ROUTE "/blog/:blogId - GET
+app.get("/blogs/:blogId", (req, res) => {
+  const blogId = req.params.blogId;
+  const data = {
+    blogId: "hello",
+    title: "This is a test title. This is a test title.",
+    subtitle:
+      "This is a test subtitle. This is a test subtitle. This is a test subtitle. This is a test subtitle.",
+    route: "/blog/hello",
+    preview: `Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Integer rhoncus mattis lectus, vel volutpat magna
+    posuere vitae. Duis non sem sed enim placerat malesuada. Vestibulum
+    sapien lorem, sollicitudin at velit ac, pharetra commodo urna. Duis
+    commodo ullamcorper urna ultricies consequat. Nullam id cursus nunc.
+    Vestibulum metus lacus, ornare eget imperdiet ut, commodo fringilla
+    nisi. Cras pellentesque, magna in consequat interdum, purus mi
+    volutpat dui, et aliquam tortor ipsum sit amet tellus. Curabitur
+    fermentum porta aliquet. Donec congue, dui non venenatis pellentesque,
+    mauris nisl sollicitudin eros, non commodo enim est a augue. Vivamus
+    placerat, elit et ultrices rhoncus, nisi risus sagittis lorem, at
+    sodales lectus risus id nulla. Praesent ullamcorper, ipsum ac
+    vestibulum pulvinar, odio lacus gravida elit, eget malesuada erat
+    velit eu ipsum. Vivamus auctor metus tincidunt odio sodales, in
+    vestibulum nibh euismod.`,
+    markdown: `# hello
+## hello
+### hello
+#### hello
+##### hello
+###### hello
+
+A paragraph with *emphasis* and **strong importance**.
+
+> A block quote with ~~strikethrough~~ and a URL: https://reactjs.org.
+
+* Lists
+* [ ] todo
+* [x] done
+
+A table:
+| a | b | 1 |
+|:--|:--|:--|
+| c | d | 2 |
+| e | f | 3 |
+| g | h | 4 |
+| g | h | 4 |
+| g | h | 4 |
+| g | h | 4 |
+
+~~~js
+import Markdown from '../../components/Markdown/Markdown';
+console.log("hello world!");
+~~~
+`,
+    date: "Dec 14, 2022",
+    tags: ["Test", "Test", "Test"],
+  };
+  res.json(data);
 });
 
 // ===== APP =====
