@@ -12,9 +12,18 @@ import { LoadingProvider } from "./contexts/LoadingContext";
 
 import "./index.css";
 
-// ===== CONTENT =====
+// ===== AXIOS =====
 Axios.defaults.withCredentials = true;
+// can also use Axios.defaults.header["X-Api-Key"] = process.enc.REACT_APP_API_KEY;
+Axios.interceptors.request.use(
+  (config) => {
+    config.headers["X-Api-Key"] = process.env.REACT_APP_API_KEY;
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
+// ===== CONTENT =====
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
