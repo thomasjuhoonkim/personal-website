@@ -18,9 +18,11 @@ const Blogs = () => {
 
   return (
     <div className="blogs-list-container">
-      {blogs.map((blog, i) => (
-        <BlogListElement key={i} blog={blog} />
-      ))}
+      {blogs.length !== 0 ? (
+        blogs.map((blog, i) => <BlogListElement key={i} blog={blog} />)
+      ) : (
+        <h1 className="blogs-loading">Nothing to see here.</h1>
+      )}
     </div>
   );
 };

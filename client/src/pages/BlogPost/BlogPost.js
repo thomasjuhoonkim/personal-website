@@ -4,8 +4,14 @@ import { useParams } from "react-router-dom";
 
 import { Markdown } from "../../components";
 
-import cat from "../../assets/cat.png";
 import "./BlogPost.scoped.scss";
+
+const convertISODateToString = (ISODate) => {
+  const date = new Date(ISODate).toString();
+  const dateArray = date.split(" ").slice(1, 4);
+  const dateString = `${dateArray[0]} ${dateArray[1]}, ${dateArray[2]}`;
+  return dateString;
+};
 
 const BlogPost = () => {
   const scrollToTop = () => {
@@ -23,11 +29,27 @@ const BlogPost = () => {
     })();
   }, [blogId]);
 
+  if (!blog) {
+    return (
+      <div className="blog-post-contianer">
+        <h1 style={{ margin: "30vh 0", textAlign: "center" }}>
+          Nothing to see here.
+        </h1>
+      </div>
+    );
+  }
+
+  const dateString = convertISODateToString(blog.createdDate);
+
   return (
     <div className="blog-post-container">
       <h1 className="blog-post-title">{blog.title}</h1>
       <h3 className="blog-post-subtitle">{blog.subtitle}</h3>
-      <img className="blog-post-thumbnail" src={cat} alt="blog thumbnail" />
+      <img
+        className="blog-post-thumbnail"
+        src={blog.thumbnail}
+        alt="blog thumbnail"
+      />
       <div className="blog-post-markdown-container">
         <Markdown markdown={blog.markdown} />
       </div>
@@ -40,7 +62,7 @@ const BlogPost = () => {
             </span>
           ))}
         </div>
-        <p className="blog-post-date">{blog.date}</p>
+        <p className="blog-post-date">{dateString}</p>
       </div>
       <hr />
       <button onClick={scrollToTop}>Back to the Top</button>

@@ -3,6 +3,13 @@
   flex-direction: column;
   gap: 16px;
   margin: 0 4rem;
+
+  .blogs-loading {
+    color: var(--font-color);
+    transition: color 0.5s ease;
+    text-align: center;
+    margin: 18vh 0;
+  }
 }
 
 @media screen and (max-width: 800px) {
