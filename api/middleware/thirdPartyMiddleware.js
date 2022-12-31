@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 import cookieSession from "cookie-session";
 
 // http
-import cors from "cors";
+// import cors from "cors";
 import bodyParser from "body-parser";
 
 // environment variables
@@ -37,13 +37,7 @@ thirdPartyMiddleware.use(
 // body parser
 thirdPartyMiddleware.use(bodyParser.urlencoded({ extended: true }));
 // cors
-thirdPartyMiddleware.use(
-  cors({
-    origin: [process.env.CLIENT_LINK, process.env.ADMIN_LINK],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
+// thirdPartyMiddleware;
 // cookie parser
 thirdPartyMiddleware.use(cookieParser());
 // cookie session
