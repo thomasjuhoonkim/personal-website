@@ -7,5 +7,6 @@ import { createUser } from "../controllers/userController.js";
 
 // PARENT ROUTE "/register"
 registerRouter.post("/", registerRateLimiter, createUser);
+// registerRouter.post("/", createUser);
 
 export default registerRouter;

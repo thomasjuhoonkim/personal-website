@@ -39,12 +39,7 @@ thirdPartyMiddleware.use(bodyParser.urlencoded({ extended: true }));
 // cors
 thirdPartyMiddleware.use(
   cors({
-    origin: [
-      process.env.CLIENT_LINK,
-      process.env.ADMIN_LINK,
-      "https://www.thomasjuhoonkim.me",
-      "https://admin.thomasjuhoonkim.me",
-    ],
+    origin: [process.env.CLIENT_LINK, process.env.ADMIN_LINK],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
