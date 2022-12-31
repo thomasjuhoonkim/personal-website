@@ -1,10 +1,11 @@
 import express from "express";
+const registerRouter = express.Router();
+
+import { registerRateLimiter } from "../middleware/rateLimiterMiddleware.js";
 
 import { createUser } from "../controllers/userController.js";
 
-const registerRouter = express.Router();
-
 // PARENT ROUTE "/register"
-registerRouter.post("/", createUser);
+registerRouter.post("/", registerRateLimiter, createUser);
 
 export default registerRouter;

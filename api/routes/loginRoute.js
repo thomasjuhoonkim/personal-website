@@ -1,6 +1,8 @@
 import express from "express";
 const loginRouter = express.Router();
 
+import { loginRateLimiter } from "../middleware/rateLimiterMiddleware.js";
+
 import {
   authorizeSessionUser,
   authorizeLoginUser,
@@ -8,6 +10,6 @@ import {
 
 // PARENT ROUTE "/login"
 loginRouter.get("/", authorizeSessionUser);
-loginRouter.post("/", authorizeLoginUser);
+loginRouter.post("/", loginRateLimiter, authorizeLoginUser);
 
 export default loginRouter;

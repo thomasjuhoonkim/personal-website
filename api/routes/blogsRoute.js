@@ -11,7 +11,7 @@ import {
 
 import { authenticateToken } from "../middleware/authenticationMiddleware.js";
 
-// PARENT ROUTE "/blogs"
+// ===== PARENT ROUTE "/blogs" =====
 
 // PUBLIC ROUTES
 blogsRouter.get("/", getBlogs);
