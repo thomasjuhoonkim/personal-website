@@ -34,15 +34,6 @@ import { redirectHeroku } from "./middleware/redirectMiddleware.js";
 // third party middleware
 app.use(thirdPartyMiddleware);
 
-import cors from "cors";
-app.use(
-  cors({
-    origin: [process.env.CLIENT_LINK, process.env.ADMIN_LINK],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
-
 // redirect heroku url traffic
 app.use(redirectHeroku);
 

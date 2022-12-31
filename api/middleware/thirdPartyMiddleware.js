@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 import cookieSession from "cookie-session";
 
 // http
-// import cors from "cors";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 // environment variables
@@ -37,7 +37,18 @@ thirdPartyMiddleware.use(
 // body parser
 thirdPartyMiddleware.use(bodyParser.urlencoded({ extended: true }));
 // cors
-// thirdPartyMiddleware;
+thirdPartyMiddleware.use(
+  cors({
+    origin: [
+      process.env.CLIENT_LINK,
+      process.env.ADMIN_LINK,
+      "https://www.thomasjuhoonkim.me",
+      "https://admin.thomasjuhoonkim.me",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 // cookie parser
 thirdPartyMiddleware.use(cookieParser());
 // cookie session
