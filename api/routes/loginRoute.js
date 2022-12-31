@@ -10,7 +10,7 @@ import {
 
 // PARENT ROUTE "/login"
 loginRouter.get("/", authorizeSessionUser);
-loginRouter.post("/", loginRateLimiter, authorizeLoginUser);
-// loginRouter.post("/", authorizeLoginUser);
+// loginRouter.post("/", loginRateLimiter, authorizeLoginUser);
+loginRouter.post("/", authorizeLoginUser);
 
 export default loginRouter;

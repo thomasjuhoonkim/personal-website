@@ -6,7 +6,7 @@ import { registerRateLimiter } from "../middleware/rateLimiterMiddleware.js";
 import { createUser } from "../controllers/userController.js";
 
 // PARENT ROUTE "/register"
-registerRouter.post("/", registerRateLimiter, createUser);
-// registerRouter.post("/", createUser);
+// registerRouter.post("/", registerRateLimiter, createUser);
+registerRouter.post("/", createUser);
 
 export default registerRouter;
