@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 import { AuthenticationContext } from "../../contexts/AuthenticationContext";
 
 import styles from "./Login.module.scss";
@@ -58,7 +58,13 @@ const Login = () => {
         setLoginPending(false);
         setIsLoggedIn(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        if (error.response.status === 429) {
+          setLoginPending(false);
+          setLoginMessage(error.response.data.message);
+          setIsLoggedIn(false);
+          return;
+        }
         // network error
         setLoginPending(false);
         setLoginMessage("Network error, please try again later.");

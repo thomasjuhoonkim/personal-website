@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 import styles from "./Loading.module.scss";
 

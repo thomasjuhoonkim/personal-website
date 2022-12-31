@@ -11,8 +11,16 @@
     />
     <title>Admin Dashboard</title>
     <style>
-      noscript { color: #202020; }
       body { background: #f2f2f2; }
+      noscript {
+        color: #202020;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
       .temporaryLoader {
         width: 12px;
         height: 12px;
@@ -25,7 +33,7 @@
         animation: animloader 1s linear infinite alternate;
       }
       @media (prefers-color-scheme: dark) {
-        noscript { color: #f2f2f2; }
+        noscript { color: #f2f2f2; background: #202020; }
         body { background: #202020; }
         .temporaryLoader{ color: #f2f2f2; }
       }
@@ -38,7 +46,7 @@
     </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app<div style="position:absolute;right:0;bottom:0;display:none;visibility:hidden"></div></noscript>
+    <noscript>You need to enable JavaScript to run this app</noscript>
     <div id="root">
       <div style="height:100vh;display:flex;justify-content:center;align-items:center;">
         <span class="temporaryLoader"></span>

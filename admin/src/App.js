@@ -5,14 +5,16 @@ import { DarkModeContext } from "./contexts/DarkModeContext";
 import { AuthenticationContext } from "./contexts/AuthenticationContext";
 import { LoadingContext } from "./contexts/LoadingContext";
 
-import { Template, ProtectedRoute } from "./components/index";
+import { DashboardTemplate, ProtectedRoute } from "./components";
 import {
   Login,
   Register,
   FourZeroFour,
   Dashboard,
   Loading,
-} from "./pages/index";
+  Blog,
+  BlogPost,
+} from "./pages";
 
 import "./App.css";
 
@@ -34,8 +36,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
-          <Route element={<Template />}>
+          <Route element={<DashboardTemplate />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:blogId" element={<BlogPost />} />
           </Route>
         </Route>
         <Route path="*" element={<FourZeroFour />} />

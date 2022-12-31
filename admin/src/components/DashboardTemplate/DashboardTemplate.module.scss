@@ -1,0 +1,57 @@
+.dashboardContainer {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-color);
+  transition: background 0.5s ease;
+  .menuContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--menu-bg-color);
+    transition: background 0.5s ease;
+    .darkModeButton {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      margin-right: -10px;
+    }
+    .linksContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+      .link {
+        text-decoration: none;
+        color: var(--menu-font-color);
+        position: relative;
+        transition: color 0.5s ease;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0.2em;
+          left: 0;
+          width: 100%;
+          height: 0.2rem;
+          background: var(--primary-color);
+          opacity: 0;
+          transition: opacity 0.3s, transform 0.3s;
+        }
+        &:hover {
+          text-shadow: 0 0 0.5px var(--shadow-color);
+          transition: text-shadow 0.5s ease;
+          &::after {
+            opacity: 1;
+            transform: translateY(0.4em);
+          }
+        }
+      }
+    }
+  }
+  .outletContainer {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    transition: background 0.5s ease;
+  }
+}

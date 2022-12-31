@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 import styles from "./Register.module.scss";
 
@@ -58,7 +58,12 @@ const Register = () => {
         setRegistrationMessage(response.data.message);
         setRegistrationPending(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        if (error.response.status === 429) {
+          setRegistrationPending(false);
+          setRegistrationMessage(error.response.data.message);
+          return;
+        }
         // network error
         setRegistrationPending(false);
         setRegistrationMessage("Network error, please try again later.");

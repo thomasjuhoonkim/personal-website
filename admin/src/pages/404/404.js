@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import DarkModeButton from "../../components/NavBar/DarkModeButton/DarkModeButton";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 import styles from "./404.module.scss";
 
